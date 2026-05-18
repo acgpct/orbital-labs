@@ -11,39 +11,39 @@ const TURBINE_ACCENT =
 const buyerProfiles = [
   {
     label: 'Profile A',
-    title: 'Infrastructure Fund\nPortfolio Operations',
-    who: 'Mid-market infrastructure funds (AUM €1–10B) with active European energy mandates, holding 5–25 portfolio companies, each owning 100 MW–2 GW of renewable capacity.',
+    title: 'Infrastructure funds · portfolio operations',
+    who: 'Mid-market infra funds (€1–10B AUM), European energy focus, 5–25 holdings, ~100 MW–2 GW renewables each.',
     buyer: 'Head of Asset Management or Operating Partner',
     velocity: '8–14 weeks',
     tier: 'Tier 3 Managed / Tier 4 Embedded',
-    pain: 'Fund-level reporting discipline across portfolio companies. Unified standard without building data teams at each portfolio company.',
+    pain: 'Consistent fund-level reporting without hiring data teams in every portfolio company.',
   },
   {
     label: 'Profile B',
-    title: 'Mid-Size IPPs\n& Developers',
-    who: 'Independent power producers and developers operating 200 MW–5 GW of capacity, primarily renewables (solar, onshore wind), with a growing share of storage and hybrid plants.',
+    title: 'Mid-size IPPs & developers',
+    who: 'IPPs and developers at 200 MW–5 GW — solar, onshore wind, storage, hybrids.',
     buyer: 'COO or CFO, with Head of Asset Management as technical sponsor',
     velocity: '3–6 months',
     tier: 'Tier 2 Application / Tier 3 Managed',
-    pain: 'Fragmented stack of spreadsheets, OEM monitoring tools, and point applications. No single view of portfolio performance, contracts, and reporting.',
+    pain: 'Fragmented spreadsheets and OEM tools — no single view of performance, contracts, or reporting.',
   },
   {
     label: 'Profile C',
-    title: 'Large IPPs\n& Listed Platforms',
-    who: 'Listed or PE-controlled IPPs with portfolios exceeding 5 GW. Typically have internal BI and engineering capacity that the platform integrates with rather than replaces.',
+    title: 'Large IPPs & listed platforms',
+    who: 'Listed or PE-backed IPPs above ~5 GW — strong BI/engineering; we integrate, not replace.',
     buyer: 'CIO or Chief Digital Officer, with COO sponsorship',
     velocity: '6–9 months',
     tier: 'Tier 1 API / Tier 2 Application',
-    pain: 'Methodology consistency across geographies. Lender-grade reporting assembled in days. Integration with existing BI and finance systems.',
+    pain: 'One methodology across geographies; lender-grade packs in days; plugs into existing BI and finance.',
   },
   {
     label: 'Profile D',
-    title: 'EPC & Owners’\nEngineers',
-    who: 'Engineering, procurement, and construction firms and independent owners’ engineers delivering renewable projects — from early design through commissioning and handover.',
+    title: 'EPC & owners’ engineers',
+    who: 'EPCs and owners’ engineers from design through commissioning and handover.',
     buyer: 'Project Director or Head of Digital Delivery',
     velocity: '4–10 weeks',
     tier: 'Tier 2 Application / Tier 3 Managed',
-    pain: 'Aligned data and clean handover into owner systems without document chaos at COD — milestones, snags, and as-built packs in one auditable thread.',
+    pain: 'Clean COD handover — milestones, snags, and as-builts in one auditable thread.',
   },
 ];
 
@@ -78,7 +78,7 @@ export default function IndustrySection() {
       id="solutions"
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: '#f4f6f8', minHeight: '100vh', display: 'flex', alignItems: 'center' }}
+      style={{ background: '#f4f6f8', display: 'flex', alignItems: 'center' }}
     >
       <div className="absolute inset-0" style={{ pointerEvents: 'none' }}>
         <img
@@ -127,51 +127,42 @@ export default function IndustrySection() {
         />
       </div>
 
-      <div ref={contentRef} className="relative z-10 w-full container py-36">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '56px', flexWrap: 'wrap', gap: '24px' }}>
+      <div ref={contentRef} className="relative z-10 w-full container pt-16 pb-12 sm:pt-20 sm:pb-16 md:pt-24 md:pb-20">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 'clamp(24px, 4vw, 40px)', flexWrap: 'wrap', gap: '16px' }}>
           <div>
-            <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.58rem', letterSpacing: '0.32em', textTransform: 'uppercase', color: '#92a4ac', marginBottom: '20px' }}>
+            <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.58rem', letterSpacing: '0.32em', textTransform: 'uppercase', color: '#92a4ac', marginBottom: '12px' }}>
               02 / Solutions — Energy
             </p>
-            <h2 className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Exo 2', sans-serif", fontWeight: 200, fontSize: 'clamp(2rem, 4vw, 3.5rem)', lineHeight: 1.1, letterSpacing: '0.04em', color: '#1e2830', margin: 0 }}>
-              Built for energy<br />asset owners.
+            <h2 className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Exo 2', sans-serif", fontWeight: 200, fontSize: 'clamp(1.65rem, 3.2vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '0.04em', color: '#1e2830', margin: 0 }}>
+              Built for energy asset owners.
             </h2>
           </div>
-          <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', lineHeight: 1.8, color: '#586879', fontWeight: 300, maxWidth: '400px' }}>
-            Lifecycle intelligence from origination to exit — one operating model in renewable power, where portfolio complexity and reporting burden are highest.
+          <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.875rem', lineHeight: 1.55, color: '#586879', fontWeight: 300, maxWidth: '420px' }}>
+            Lifecycle intelligence from origination to exit — built for renewable portfolios where reporting cost and complexity bite hardest.
           </p>
         </div>
 
-        <div id="solutions-industry" className="scroll-mt-28 ind-reveal mb-20" style={revealStyle}>
-          <p style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.28em', textTransform: 'uppercase', color: '#92a4ac', marginBottom: '16px' }}>
-            Industry
+        <div id="solutions-industry" className="scroll-mt-28 ind-reveal mb-12 md:mb-16" style={revealStyle}>
+          <p style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#92a4ac', marginBottom: '12px' }}>
+            Industry · Renewable energy
           </p>
-          <h3 style={{ fontFamily: "'Exo 2', sans-serif", fontWeight: 200, fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', letterSpacing: '0.04em', color: '#1e2830', marginBottom: '16px' }}>
-            Renewable energy
-          </h3>
-          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', lineHeight: 1.85, color: '#586879', fontWeight: 300, maxWidth: '720px', marginBottom: '16px' }}>
-            Our first vertical is owners and operators of renewable generation — solar, onshore wind, storage, and hybrids. The same data model extends to adjacent asset classes over time.
-          </p>
-          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', lineHeight: 1.85, color: '#586879', fontWeight: 300, maxWidth: '720px', marginBottom: 0 }}>
-            The platform replaces the fragmented stack of spreadsheets, OEM monitoring tools, and point applications that mid-market IPPs and developers use today. Phase 1 focus: Europe. Geographies live at launch: Poland, Hungary, Romania, Italy, Spain, Germany.
+          <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.875rem', lineHeight: 1.55, color: '#586879', fontWeight: 300, maxWidth: '720px', margin: 0 }}>
+            First vertical: owners and operators of solar, onshore wind, storage, and hybrids — data model extends to adjacent classes over time. Replaces fragmented spreadsheets and OEM silos for mid-market players. Phase 1: EU (Poland, Hungary, Romania, Italy, Spain, Germany).
           </p>
         </div>
 
-        <div id="solutions-buyers" className="scroll-mt-28 mb-24">
-          <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#c6d1db', marginBottom: '12px' }}>
-            Who we serve
-          </p>
-          <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.28em', textTransform: 'uppercase', color: '#92a4ac', marginBottom: '28px' }}>
-            Solutions by company type
+        <div id="solutions-buyers" className="scroll-mt-28 mb-12">
+          <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#92a4ac', marginBottom: '16px' }}>
+            Who we serve · By company type
           </p>
 
-          <div className="flex flex-wrap gap-0 border-b border-[rgba(88,104,121,0.1)]" style={{ marginBottom: '48px' }}>
+          <div className="flex flex-wrap gap-0 border-b border-[rgba(88,104,121,0.1)]" style={{ marginBottom: 'clamp(20px, 3vw, 32px)' }}>
             {buyerProfiles.map((p, i) => (
               <button
                 key={p.label}
                 type="button"
                 onClick={() => setActiveProfile(i)}
-                className="ind-reveal bg-transparent border-0 cursor-pointer mb-[-1px] pr-6 py-3 transition-colors"
+                className="ind-reveal bg-transparent border-0 cursor-pointer mb-[-1px] pr-5 py-2 transition-colors"
                 style={{
                   ...revealStyle,
                   fontFamily: "'Space Mono', monospace",
@@ -190,30 +181,30 @@ export default function IndustrySection() {
           {buyerProfiles.map((p, i) => (
             <div
               key={p.label}
-              className="ind-reveal grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16"
+              className="ind-reveal grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
               style={{ display: activeProfile === i ? 'grid' : 'none', ...revealStyle }}
             >
               <div>
-                <h3 style={{ fontFamily: "'Exo 2', sans-serif", fontWeight: 200, fontSize: 'clamp(1.4rem, 2.5vw, 2rem)', letterSpacing: '0.04em', color: '#1e2830', marginBottom: '20px', whiteSpace: 'pre-line', lineHeight: 1.2 }}>
+                <h3 style={{ fontFamily: "'Exo 2', sans-serif", fontWeight: 200, fontSize: 'clamp(1.2rem, 2vw, 1.65rem)', letterSpacing: '0.04em', color: '#1e2830', marginBottom: '12px', lineHeight: 1.25 }}>
                   {p.title}
                 </h3>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', lineHeight: 1.85, color: '#586879', fontWeight: 300, marginBottom: '28px' }}>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.84rem', lineHeight: 1.55, color: '#586879', fontWeight: 300, marginBottom: '16px' }}>
                   {p.who}
                 </p>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.85rem', color: '#586879', lineHeight: 1.7, padding: '20px', background: 'rgba(249,251,253,0.72)', borderLeft: '2px solid rgba(88,104,121,0.2)' }}>
-                  <strong style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#92a4ac', display: 'block', marginBottom: '8px' }}>Pain point</strong>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.8rem', color: '#586879', lineHeight: 1.5, padding: '16px', background: 'rgba(249,251,253,0.72)', borderLeft: '2px solid rgba(88,104,121,0.2)' }}>
+                  <strong style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.5rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: '#92a4ac', display: 'block', marginBottom: '6px' }}>Pain point</strong>
                   {p.pain}
                 </div>
               </div>
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
                 {[
                   { label: 'Economic buyer', value: p.buyer },
                   { label: 'Procurement velocity', value: p.velocity },
                   { label: 'Recommended tier', value: p.tier },
                 ].map((item) => (
-                  <div key={item.label} style={{ borderBottom: '1px solid rgba(88,104,121,0.08)', paddingBottom: '20px' }}>
-                    <p style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c6d1db', marginBottom: '8px' }}>{item.label}</p>
-                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.9rem', color: '#1e2830', fontWeight: 400, margin: 0 }}>{item.value}</p>
+                  <div key={item.label} style={{ borderBottom: '1px solid rgba(88,104,121,0.08)', paddingBottom: '14px' }}>
+                    <p style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.5rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#c6d1db', marginBottom: '6px' }}>{item.label}</p>
+                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.84rem', color: '#1e2830', fontWeight: 400, margin: 0, lineHeight: 1.45 }}>{item.value}</p>
                   </div>
                 ))}
                 <a
@@ -226,7 +217,7 @@ export default function IndustrySection() {
                     textTransform: 'uppercase',
                     color: '#1e2830',
                     border: '1px solid rgba(88,104,121,0.35)',
-                    padding: '13px 28px',
+                    padding: '11px 24px',
                     textDecoration: 'none',
                     marginTop: '8px',
                   }}

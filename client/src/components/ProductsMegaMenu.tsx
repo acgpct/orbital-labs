@@ -85,7 +85,7 @@ export function ProductsMegaMenuPanel({ onNavigate, variant = 'dropdown' }: Prop
         className={
           variant === 'stacked'
             ? 'w-full rounded-sm p-6'
-            : 'md:col-span-4 rounded-sm p-6 md:self-stretch flex flex-col justify-center min-h-[180px]'
+            : 'md:col-span-4 rounded-sm p-6 md:self-stretch flex flex-col justify-center min-h-[160px]'
         }
         style={{
           background: 'linear-gradient(168deg, #586879 0%, #3d4a56 100%)',
@@ -95,8 +95,8 @@ export function ProductsMegaMenuPanel({ onNavigate, variant = 'dropdown' }: Prop
         <span className="block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.22em] uppercase text-[rgba(249,251,253,0.55)] mb-4">
           One platform
         </span>
-        <p className="font-['Space_Grotesk',sans-serif] text-[0.85rem] text-[#f9fbfd] leading-relaxed mb-5">
-          Four surfaces on a shared data model — plus seven lifecycle modules from pipeline through exit — so intelligence compounds instead of living in siloed tools.
+        <p className="font-['Space_Grotesk',sans-serif] text-[0.82rem] text-[#f9fbfd] leading-snug mb-5">
+          Four stack surfaces, one model, seven lifecycle modules — from pipeline to exit, without siloed tools.
         </p>
         <MegaLink
           href="#products"

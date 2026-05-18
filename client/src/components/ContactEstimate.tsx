@@ -127,7 +127,7 @@ export default function ContactEstimate() {
       <div
         ref={rootRef}
         id="contact-estimate"
-        className="relative isolate flex min-h-[100dvh] flex-col overflow-hidden"
+        className="relative isolate flex flex-col overflow-hidden py-10 md:py-14"
       >
         <div className="absolute inset-0 -z-10">
           <img
@@ -150,8 +150,7 @@ export default function ContactEstimate() {
           />
         </div>
 
-        <div
-          className="absolute left-10 top-10 z-20 max-w-[min(90vw,520px)]"
+        <div className="absolute left-6 top-6 z-20 max-w-[min(90vw,520px)] sm:left-10 sm:top-8"
           style={{
             fontFamily: "'Space Mono', monospace",
             fontSize: '0.6rem',
@@ -165,20 +164,20 @@ export default function ContactEstimate() {
           06 / Contact — Estimate
         </div>
 
-        <div className="relative z-10 flex min-h-0 flex-1 flex-col px-5 pb-12 pt-[5.5rem] sm:px-10 md:px-14 lg:px-24">
+        <div className="relative z-10 flex flex-col px-5 pb-8 pt-16 sm:px-10 md:px-14 lg:px-24">
           <div
             ref={cardRef}
-            className="mx-auto flex w-full flex-1 flex-col min-h-0 max-w-[min(820px,100%)]"
+            className="mx-auto flex w-full flex-col max-w-[min(820px,100%)]"
             style={{
               ...glassPanel,
               borderRadius: '4px',
-              padding: 'clamp(36px,5vw,56px) clamp(32px,4.5vw,52px)',
+              padding: 'clamp(24px,4vw,40px) clamp(24px,3.5vw,44px)',
               opacity: visible ? 1 : 0,
               transform: visible ? 'translateY(0)' : 'translateY(28px)',
               transition: 'opacity 0.9s cubic-bezier(0.23,1,0.32,1) 0.3s, transform 0.9s cubic-bezier(0.23,1,0.32,1) 0.3s',
             }}
           >
-            <div className="flex min-h-0 flex-1 flex-col">
+            <div className="flex flex-col">
               <div>
                 <p
                   style={{
@@ -187,7 +186,7 @@ export default function ContactEstimate() {
                     letterSpacing: '0.3em',
                     textTransform: 'uppercase',
                     color: 'rgba(88,104,121,0.85)',
-                    marginBottom: '16px',
+                    marginBottom: '12px',
                   }}
                 >
                   Estimate your efficiency gain
@@ -196,17 +195,15 @@ export default function ContactEstimate() {
                   style={{
                     fontFamily: "'Exo 2', sans-serif",
                     fontWeight: 200,
-                    fontSize: 'clamp(1.65rem, 3.2vw, 2.5rem)',
+                    fontSize: 'clamp(1.5rem, 2.8vw, 2.25rem)',
                     lineHeight: 1.12,
                     letterSpacing: '0.06em',
                     textTransform: 'uppercase',
                     color: '#1e2830',
-                    marginBottom: 'clamp(28px,4vh,44px)',
+                    marginBottom: 'clamp(20px,3vh,32px)',
                   }}
                 >
-                  How much could
-                  <br />
-                  you reclaim?
+                  How much could you reclaim?
                 </h2>
               </div>
 
@@ -214,8 +211,8 @@ export default function ContactEstimate() {
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: 'clamp(22px,3vh,34px)',
-                  marginBottom: 'clamp(20px,2.5vh,28px)',
+                  gap: 'clamp(16px,2.5vh,26px)',
+                  marginBottom: 'clamp(14px,2vh,22px)',
                   flex: '0 0 auto',
                 }}
               >
@@ -302,7 +299,7 @@ export default function ContactEstimate() {
               <div
                 style={{
                   width: '100%',
-                  marginBottom: 'clamp(20px,3vh,32px)',
+                  marginBottom: 'clamp(14px,2vh,22px)',
                   flexShrink: 0,
                 }}
               >
@@ -329,14 +326,14 @@ export default function ContactEstimate() {
                     Total annual manual footprint{' '}
                     <strong style={{ fontWeight: 500, color: '#1e2830' }}>{formatSaving(statusQuoAnnual)}</strong>
                   </span>
-                  <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.5rem', letterSpacing: '0.2em', color: 'rgba(88,104,121,0.55)' }}>
-                    BAR = 100% OF COST BEFORE RECLAIM
+                  <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.5rem', letterSpacing: '0.18em', color: 'rgba(88,104,121,0.55)' }}>
+                    Bar = 100% cost before reclaim
                   </span>
                 </div>
                 <div
                   style={{
                     width: '100%',
-                    height: 'clamp(150px, 22vh, 220px)',
+                    height: 'clamp(120px, 16vh, 180px)',
                   }}
                 >
                   <ResponsiveContainer width="100%" height="100%">
@@ -438,19 +435,19 @@ export default function ContactEstimate() {
                 <p
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: '0.68rem',
+                    fontSize: '0.65rem',
                     color: 'rgba(88,104,121,0.55)',
-                    marginTop: '12px',
+                    marginTop: '8px',
                     lineHeight: 1.45,
                   }}
                 >
-                  One bar spans your full annual manual-work cost; the dark segment grows with reclaim, the remainder stays in lighter manual spend.
+                  One bar = full annual manual cost; dark = reclaimed, light = still manual.
                 </p>
               </div>
 
               <div style={{ flex: '0 0 auto' }}>
-                <div style={{ height: '1px', background: 'rgba(88,104,121,0.14)', marginBottom: '28px' }} />
-                <div style={{ marginBottom: '28px' }}>
+                <div style={{ height: '1px', background: 'rgba(88,104,121,0.14)', marginBottom: '20px' }} />
+                <div style={{ marginBottom: '20px' }}>
                   <p
                     style={{
                       fontFamily: "'Space Mono', monospace",
@@ -468,7 +465,7 @@ export default function ContactEstimate() {
                       style={{
                         fontFamily: "'Exo 2', sans-serif",
                         fontWeight: 200,
-                        fontSize: 'clamp(3rem, 6.5vw, 4.75rem)',
+                        fontSize: 'clamp(2.25rem, 5vw, 3.75rem)',
                         lineHeight: 1,
                         color: '#1e2830',
                         letterSpacing: '-0.01em',
@@ -481,7 +478,7 @@ export default function ContactEstimate() {
                       style={{
                         fontFamily: "'Exo 2', sans-serif",
                         fontWeight: 200,
-                        fontSize: 'clamp(1.5rem, 3vw, 2.25rem)',
+                        fontSize: 'clamp(1.15rem, 2.25vw, 1.75rem)',
                         color: 'rgba(88,104,121,0.55)',
                         letterSpacing: '0.02em',
                       }}
@@ -502,7 +499,7 @@ export default function ContactEstimate() {
                     textTransform: 'uppercase',
                     color: '#1e2830',
                     border: '1px solid rgba(255,255,255,0.55)',
-                    padding: '16px 24px',
+                    padding: '14px 20px',
                     textDecoration: 'none',
                     transition: 'all 0.25s ease',
                     background: 'rgba(255,255,255,0.28)',

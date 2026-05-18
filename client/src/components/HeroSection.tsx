@@ -98,11 +98,10 @@ export default function HeroSection() {
             textShadow: '0 2px 32px rgba(0,0,0,0.25)',
           }}
         >
-          Advanced Intelligence<br />
-          for Complex Systems
+          Advanced Intelligence for Complex Systems
         </h1>
 
-        <div className="flex items-center justify-center gap-6 mt-8 flex-wrap">
+        <div className="flex items-center justify-center gap-6 mt-6 flex-wrap">
           <a
             href="#products"
             style={{

@@ -43,8 +43,8 @@ export default function ContactSection() {
       <ContactEstimate />
 
       <div id="contact-form" className="scroll-mt-[5rem]" style={{ background: '#ffffff' }}>
-        <div className="container py-24 lg:py-36">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="container pt-14 pb-12 md:pt-20 md:pb-16 lg:pt-24 lg:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
               <p
                 style={{
@@ -53,7 +53,7 @@ export default function ContactSection() {
                   letterSpacing: '0.32em',
                   textTransform: 'uppercase',
                   color: '#92a4ac',
-                  marginBottom: '24px',
+                  marginBottom: '14px',
                 }}
               >
                 Reach out
@@ -62,37 +62,35 @@ export default function ContactSection() {
                 style={{
                   fontFamily: "'Exo 2', sans-serif",
                   fontWeight: 200,
-                  fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-                  lineHeight: 1.1,
+                  fontSize: 'clamp(1.65rem, 3.2vw, 2.85rem)',
+                  lineHeight: 1.12,
                   letterSpacing: '0.04em',
                   color: '#1e2830',
-                  marginBottom: '24px',
+                  marginBottom: '14px',
                 }}
               >
-                {"Let's work"}
-                <br />
-                together.
+                Let&apos;s work together.
               </h2>
               <p
                 style={{
                   fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: '0.95rem',
-                  lineHeight: 1.85,
+                  fontSize: '0.875rem',
+                  lineHeight: 1.55,
                   color: '#586879',
                   fontWeight: 300,
                   maxWidth: '400px',
-                  marginBottom: '56px',
+                  marginBottom: '36px',
                 }}
               >
-                Whether you're exploring AI strategy, evaluating our products, or ready to deploy — we'd like to hear from you.
+                Strategy questions, product evaluation, or deployment — we&apos;re happy to talk.
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 {[
                   { label: 'General Enquiries', value: 'hello@orbitallabs.ai' },
                   { label: 'Partnerships', value: 'partnerships@orbitallabs.ai' },
                   { label: 'Press & Media', value: 'press@orbitallabs.ai' },
                 ].map((item) => (
-                  <div key={item.label} style={{ borderBottom: '1px solid rgba(88,104,121,0.1)', paddingBottom: '20px' }}>
+                  <div key={item.label} style={{ borderBottom: '1px solid rgba(88,104,121,0.1)', paddingBottom: '14px' }}>
                     <p
                       style={{
                         fontFamily: "'Space Mono', monospace",
@@ -154,7 +152,7 @@ export default function ContactSection() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                     <div>
                       <label style={labelStyle}>Name</label>
@@ -194,7 +192,7 @@ export default function ContactSection() {
                     <label style={labelStyle}>Message</label>
                     <textarea
                       required
-                      rows={4}
+                      rows={3}
                       style={{ ...inputStyle, resize: 'none' }}
                       value={form.message}
                       onChange={(e) => setForm({ ...form, message: e.target.value })}
@@ -212,7 +210,7 @@ export default function ContactSection() {
                       textTransform: 'uppercase',
                       color: '#1e2830',
                       border: '1px solid rgba(88,104,121,0.35)',
-                      padding: '14px 32px',
+                      padding: '12px 26px',
                       background: 'transparent',
                       cursor: 'pointer',
                       transition: 'all 0.25s ease',

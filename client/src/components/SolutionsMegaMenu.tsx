@@ -48,7 +48,7 @@ export function SolutionsMegaMenuPanel({ onNavigate, variant = 'dropdown' }: Pro
         className={
           variant === 'stacked'
             ? 'w-full rounded-sm p-6'
-            : 'md:col-span-6 rounded-sm p-6 md:self-stretch flex flex-col justify-center min-h-[200px]'
+            : 'md:col-span-6 rounded-sm p-6 md:self-stretch flex flex-col justify-center min-h-[160px]'
         }
         style={{
           background: 'linear-gradient(165deg, #586879 0%, #3d4a56 100%)',
@@ -58,11 +58,11 @@ export function SolutionsMegaMenuPanel({ onNavigate, variant = 'dropdown' }: Pro
         <span className="block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.22em] uppercase text-[rgba(249,251,253,0.55)] mb-5">
           Operating system lens
         </span>
-        <ul className="flex flex-col gap-4 font-['Space_Grotesk',sans-serif] text-[0.8rem] text-[#f9fbfd] leading-snug">
-          <li className="border-b border-[rgba(249,251,253,0.12)] pb-4">De-risk diligence with one SPV-to-asset system of record.</li>
-          <li className="border-b border-[rgba(249,251,253,0.12)] pb-4">Unify development, construction, and operations without re-keying.</li>
-          <li className="border-b border-[rgba(249,251,253,0.12)] pb-4">Maximise lender- and board-ready reporting from live data.</li>
-          <li className="pt-1">Compress variance detection, settlement, and O&amp;M workflows post–COD.</li>
+        <ul className="flex flex-col gap-3 font-['Space_Grotesk',sans-serif] text-[0.78rem] text-[#f9fbfd] leading-snug">
+          <li className="border-b border-[rgba(249,251,253,0.12)] pb-3">One SPV-to-asset system of record for diligence.</li>
+          <li className="border-b border-[rgba(249,251,253,0.12)] pb-3">Dev, build, and ops on one model — no re-keying.</li>
+          <li className="border-b border-[rgba(249,251,253,0.12)] pb-3">Lender- and board-ready reporting from live data.</li>
+          <li className="pt-0.5">Post-COD variance, settlement, and O&amp;M in one workflow layer.</li>
         </ul>
       </div>
     </div>

@@ -14,7 +14,7 @@ const lifecycleModules = [
     title: 'Pipeline & SPV',
     tagline: 'Origination to financial close.',
     description:
-      'Stage-gate pipeline from screening to financial close. Capital allocation, deal-team workflow, SPV setup and ownership tracking. Replaces the pipeline spreadsheet and the SPV register that today live in separate Excel files.',
+      'Stage-gate pipeline through financial close: capital allocation, deal workflow, SPV setup, ownership — replaces separate pipeline and SPV spreadsheets.',
     tags: ['Pipeline management', 'SPV lifecycle', 'Capital allocation', 'Deal workflow'],
   },
   {
@@ -22,7 +22,7 @@ const lifecycleModules = [
     title: 'Development',
     tagline: 'Land rights, permits, grid — one place.',
     description:
-      'Land-option tracking, permit register with automated lapse detection, grid-connection milestone tracking, and stakeholder mapping for community, regulator, and counterparty engagement. Replaces the development tracker and the permit calendar maintained by separate teams.',
+      'Land options, permit register with lapse alerts, grid milestones, stakeholder map — one tracker instead of scattered calendars.',
     tags: ['Permitting', 'Land rights', 'Grid connection', 'Stakeholder mapping'],
   },
   {
@@ -30,7 +30,7 @@ const lifecycleModules = [
     title: 'Financing',
     tagline: 'From model to financial close.',
     description:
-      'Financial model integration, debt and equity raise workflows, drawdown management, and lender DD coordination. Includes the data room, model versioning, lender Q&A log, and drawdown schedule. Workload peaks pre-COD; drawdowns continue through construction.',
+      'Model integration, debt/equity workflows, drawdowns, lender DD: data room, model versions, Q&A log, schedule — heavy through close and construction.',
     tags: ['Data room', 'Lender DD', 'Drawdown management', 'Model versioning'],
   },
   {
@@ -38,7 +38,7 @@ const lifecycleModules = [
     title: 'Contracts',
     tagline: 'Every contract, every milestone.',
     description:
-      'Lifecycle management of EPC, LTSA, O&M, offtake, and ancillary contracts. Standardised clause library, retention and milestone tracking, indexation calculations, expiry and renewal alerts. The connective tissue between development, construction, and operations.',
+      'EPC, LTSA, O&M, offtake, ancillaries: clause library, retention and milestones, indexation, renewal alerts — links dev, build, and ops.',
     tags: ['EPC & LTSA', 'Retention tracking', 'Indexation', 'Expiry alerts'],
   },
   {
@@ -46,7 +46,7 @@ const lifecycleModules = [
     title: 'Construction & Commissioning',
     tagline: 'Real-time visibility into build progress.',
     description:
-      'EPC milestone tracking, capex management, change-order workflow, commissioning checklists, COD handover. Retention release triggers and warranty-period start dates feed directly into Asset Management post-COD.',
+      'EPC milestones, capex, change orders, commissioning, COD handover — retention and warranty dates flow straight into asset management.',
     tags: ['Capex tracking', 'Change orders', 'COD handover', 'Commissioning'],
   },
   {
@@ -54,7 +54,7 @@ const lifecycleModules = [
     title: 'Asset Management & O&M',
     tagline: 'The operational heart of the platform.',
     description:
-      'Performance monitoring across mixed-OEM portfolios, daily variance detection and investigation, settlement and metering reconciliation, work-order tracking, BESS dispatch logging. Built on TimescaleDB — handles tens of millions of operating records per portfolio per year. The module most customers buy first.',
+      'Mixed-OEM monitoring, variance investigation, settlement reconciliation, work orders, BESS dispatch — TimescaleDB-scale history; often the first module bought.',
     tags: ['Performance monitoring', 'Variance detection', 'Settlement reconciliation', 'Work orders'],
   },
   {
@@ -62,7 +62,7 @@ const lifecycleModules = [
     title: 'Reporting & Capital Recycling',
     tagline: 'Lender packs in days, not weeks.',
     description:
-      'Lender packs, investor packs, board packs, CSRD reporting, refinancing data rooms, M&A support. Operational reporting on a quarterly rhythm and episodic capital events (refinance, sell-down, exit) — both pulling from the same underlying data model.',
+      'Lender, investor, and board packs; CSRD; refinance and M&A rooms — same core data for quarterly ops and episodic capital events.',
     tags: ['Lender packs', 'CSRD reporting', 'Refinancing', 'M&A data rooms'],
   },
 ];
@@ -486,11 +486,11 @@ export default function ProductsSection() {
                   <p
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
-                      fontSize: '0.88rem',
-                      lineHeight: 1.8,
+                      fontSize: '0.82rem',
+                      lineHeight: 1.55,
                       color: '#586879',
                       fontWeight: 300,
-                      marginBottom: '16px',
+                      marginBottom: '12px',
                     }}
                   >
                     {mod.description}
