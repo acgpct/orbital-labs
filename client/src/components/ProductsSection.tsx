@@ -4,9 +4,9 @@
  */
 import { useEffect, useRef, useState } from 'react';
 
-/** Subtle fog — same asset as reference project `orbital-labs 2` */
+/** Ethereal cloud / fog — atmospheric background for Platform */
 const PLATFORM_FOG_BG =
-  'https://d2xsxph8kpxj0f.cloudfront.net/310519663126225481/UCizvtKEYs2yVgvvmiwWMw/section-products-fog-DLbFDHqD45SJAcp6avLNva.webp';
+  'https://d2xsxph8kpxj0f.cloudfront.net/310519663126225481/UCizvtKEYs2yVgvvmiwWMw/section-products-fog-ArHtnXcUB5SzEfUrXuYYid.webp';
 
 const lifecycleModules = [
   {
@@ -198,15 +198,16 @@ export default function ProductsSection() {
           alt=""
           aria-hidden="true"
           className="w-full h-full"
-          style={{ objectFit: 'cover', objectPosition: 'center', opacity: 0.07 }}
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
         />
+        <div className="absolute inset-0" style={{ background: 'rgba(249,251,253,0.52)' }} />
         <div
           className="absolute top-0 left-0 right-0"
-          style={{ height: '200px', background: 'linear-gradient(to bottom, #ffffff 0%, transparent 100%)' }}
+          style={{ height: 'clamp(120px, 20vh, 240px)', background: 'linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%)' }}
         />
         <div
           className="absolute bottom-0 left-0 right-0"
-          style={{ height: '200px', background: 'linear-gradient(to bottom, transparent 0%, #ffffff 100%)' }}
+          style={{ height: '280px', background: 'linear-gradient(to bottom, transparent 0%, rgba(249,251,253,0.88) 65%, #ffffff 100%)' }}
         />
       </div>
 
