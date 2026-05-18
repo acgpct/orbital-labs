@@ -73,7 +73,7 @@ const stackProducts = [
     num: '01',
     name: 'Orbital Core',
     type: 'Platform',
-    desc: 'The foundational AI inference and orchestration layer. A single data model spanning every project, SPV, asset, contract, permit, and operating record — the kernel that makes seven modules operate as one product.',
+    desc: 'AI inference and orchestration on one data model — projects, SPVs, assets, contracts, permits, and operating records — so all seven modules run as one product.',
     tags: ['Inference Engine', 'Data Model', 'Orchestration'],
   },
   {
@@ -81,7 +81,7 @@ const stackProducts = [
     num: '02',
     name: 'Orbital Sense',
     type: 'Intelligence Layer',
-    desc: 'Real-time multi-source data fusion and situational awareness. Performance monitoring across mixed-OEM portfolios, daily variance detection, settlement reconciliation, and work-order tracking.',
+    desc: 'Multi-source fusion and situational awareness: mixed-OEM performance, variance detection, settlement reconciliation, and work orders.',
     tags: ['Data Fusion', 'Anomaly Detection', 'Real-Time'],
   },
   {
@@ -89,7 +89,7 @@ const stackProducts = [
     num: '03',
     name: 'Orbital Adapt',
     type: 'Adaptive ML',
-    desc: 'Continuously learning model framework. Detects distribution shift, triggers retraining pipelines, and maintains performance guarantees in non-stationary environments.',
+    desc: 'Learning framework with drift detection, retraining triggers, and stable performance as conditions change.',
     tags: ['AutoML', 'Drift Detection', 'Continuous Learning'],
   },
   {
@@ -97,7 +97,7 @@ const stackProducts = [
     num: '04',
     name: 'Orbital Consult',
     type: 'Professional Services',
-    desc: 'End-to-end AI strategy, architecture design, and embedded engineering. From proof-of-concept to production deployment — we work as an extension of your team.',
+    desc: 'Strategy, architecture, and embedded engineering from PoC through production — an extension of your team.',
     tags: ['Strategy', 'Architecture', 'Deployment'],
   },
 ];
@@ -190,7 +190,7 @@ export default function ProductsSection() {
       id="products"
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ background: '#ffffff', minHeight: '100vh' }}
+      style={{ background: '#ffffff' }}
     >
       <div className="absolute inset-0 pointer-events-none">
         <img
@@ -211,9 +211,9 @@ export default function ProductsSection() {
         />
       </div>
 
-      <div className="relative z-10 container py-36">
+      <div className="relative z-10 container pt-16 pb-12 sm:pt-20 sm:pb-16 md:pt-24 md:pb-20">
         {/* —— 01 / Platform (orbital-labs 2) —— */}
-        <div style={{ marginBottom: '32px', maxWidth: '640px' }}>
+        <div style={{ marginBottom: 'clamp(16px, 2.5vw, 24px)', maxWidth: '640px' }}>
           <p
             style={{
               fontFamily: "'Space Mono', monospace",
@@ -221,7 +221,7 @@ export default function ProductsSection() {
               letterSpacing: '0.32em',
               textTransform: 'uppercase',
               color: '#92a4ac',
-              marginBottom: '20px',
+              marginBottom: '12px',
             }}
           >
             01 / Platform
@@ -230,26 +230,26 @@ export default function ProductsSection() {
             style={{
               fontFamily: "'Exo 2', sans-serif",
               fontWeight: 200,
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-              lineHeight: 1.1,
+              fontSize: 'clamp(1.65rem, 3.2vw, 2.75rem)',
+              lineHeight: 1.12,
               letterSpacing: '0.04em',
               color: '#1e2830',
-              marginBottom: '24px',
+              marginBottom: 'clamp(12px, 2vw, 16px)',
             }}
           >
-            One platform.<br />Seven modules.<br />The full asset lifecycle.
+            One platform. Seven modules. The full asset lifecycle.
           </h2>
           <p
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: '0.95rem',
-              lineHeight: 1.85,
+              fontSize: '0.875rem',
+              lineHeight: 1.55,
               color: '#586879',
               fontWeight: 300,
               maxWidth: '520px',
             }}
           >
-            A single data model holds every project, SPV, asset, contract, permit, and operating record across your portfolio. Seven workflow modules cover origination to exit — because information captured at development should flow through financing, construction, and operations without re-keying.
+            One data model across the portfolio; seven modules from origination to exit without re-keying.
           </p>
         </div>
 
@@ -258,32 +258,20 @@ export default function ProductsSection() {
             style={{
               fontFamily: "'Space Mono', monospace",
               fontSize: '0.52rem',
-              letterSpacing: '0.25em',
-              textTransform: 'uppercase',
-              color: '#c6d1db',
-              marginBottom: '12px',
-            }}
-          >
-            Product architecture
-          </p>
-          <p
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: '0.52rem',
-              letterSpacing: '0.28em',
+              letterSpacing: '0.22em',
               textTransform: 'uppercase',
               color: '#92a4ac',
-              marginBottom: '28px',
+              marginBottom: '16px',
             }}
           >
-            Stack and modules
+            Product architecture · Stack &amp; modules
           </p>
 
-          <div className="flex flex-wrap gap-0 border-b border-[rgba(88,104,121,0.1)]" style={{ marginBottom: '48px' }}>
+          <div className="flex flex-wrap gap-0 border-b border-[rgba(88,104,121,0.1)]" style={{ marginBottom: 'clamp(20px, 3vw, 32px)' }}>
             <button
               type="button"
               onClick={() => setPlatformTab('stack')}
-              className="bg-transparent border-0 cursor-pointer pr-6 py-3 mb-[-1px] transition-colors"
+              className="bg-transparent border-0 cursor-pointer pr-5 py-2 mb-[-1px] transition-colors"
               style={{
                 fontFamily: "'Space Mono', monospace",
                 fontSize: '0.55rem',
@@ -298,7 +286,7 @@ export default function ProductsSection() {
             <button
               type="button"
               onClick={() => setPlatformTab('modules')}
-              className="bg-transparent border-0 cursor-pointer pr-6 py-3 mb-[-1px] transition-colors"
+              className="bg-transparent border-0 cursor-pointer pr-5 py-2 mb-[-1px] transition-colors"
               style={{
                 fontFamily: "'Space Mono', monospace",
                 fontSize: '0.55rem',
@@ -322,7 +310,7 @@ export default function ProductsSection() {
                 className="scroll-mt-28"
                 style={{
                   ...stackRevealStyle(i),
-                  padding: '40px 36px',
+                  padding: 'clamp(18px, 2.5vw, 26px) clamp(16px, 2.2vw, 24px)',
                   background: hoverCard === i ? 'rgba(255,255,255,0.92)' : 'rgba(255,255,255,0.78)',
                   backdropFilter: 'blur(20px)',
                   WebkitBackdropFilter: 'blur(20px)',
@@ -331,7 +319,7 @@ export default function ProductsSection() {
                 onMouseEnter={() => setHoverCard(i)}
                 onMouseLeave={() => setHoverCard(null)}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '24px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '14px' }}>
                   <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.22em', color: '#c6d1db' }}>
                     {p.num}
                   </span>
@@ -353,10 +341,10 @@ export default function ProductsSection() {
                   style={{
                     fontFamily: "'Exo 2', sans-serif",
                     fontWeight: 300,
-                    fontSize: 'clamp(1.15rem, 2vw, 1.5rem)',
+                    fontSize: 'clamp(1.05rem, 1.65vw, 1.3rem)',
                     letterSpacing: '0.05em',
                     color: '#1e2830',
-                    marginBottom: '14px',
+                    marginBottom: '8px',
                   }}
                 >
                   {p.name}
@@ -364,16 +352,16 @@ export default function ProductsSection() {
                 <p
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: '0.83rem',
-                    lineHeight: 1.75,
+                    fontSize: '0.78rem',
+                    lineHeight: 1.5,
                     color: '#586879',
                     fontWeight: 300,
-                    margin: '0 0 24px',
+                    margin: '0 0 12px',
                   }}
                 >
                   {p.desc}
                 </p>
-                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
                   {p.tags.map((tag) => (
                     <span
                       key={tag}
@@ -383,7 +371,7 @@ export default function ProductsSection() {
                         letterSpacing: '0.14em',
                         textTransform: 'uppercase',
                         color: '#92a4ac',
-                        padding: '3px 10px',
+                        padding: '2px 8px',
                         border: '1px solid rgba(88,104,121,0.18)',
                       }}
                     >
@@ -426,7 +414,7 @@ export default function ProductsSection() {
                   gridTemplateColumns: '64px 1fr auto',
                   alignItems: 'center',
                   gap: '24px',
-                  padding: '28px 0',
+                  padding: '20px 0',
                 }}
               >
                 <span
@@ -533,7 +521,7 @@ export default function ProductsSection() {
           )}
         </div>
 
-        <div style={{ marginTop: '80px', display: 'flex', alignItems: 'center', gap: '32px', flexWrap: 'wrap' }}>
+        <div style={{ marginTop: 'clamp(28px, 5vw, 44px)', display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
           <a
             href="#contact"
             style={{
@@ -543,7 +531,7 @@ export default function ProductsSection() {
               textTransform: 'uppercase',
               color: '#1e2830',
               border: '1px solid rgba(88,104,121,0.35)',
-              padding: '14px 32px',
+              padding: '12px 26px',
               textDecoration: 'none',
               transition: 'all 0.25s ease',
               background: 'transparent',
