@@ -8,6 +8,8 @@ import {
   cssSectionVeilBottom,
   HANDOFF,
 } from '@shared/hero-about-handoff';
+import PlatformModuleDemo from '@/components/PlatformModuleDemo';
+import { coreIdFromLifecycleRow, type CoreModuleId } from '@shared/platform-architecture';
 
 export type PlatformTab = 'stack' | 'modules';
 
@@ -159,6 +161,11 @@ export default function ProductsSection() {
     new Array(lifecycleCapabilities.length).fill(false)
   );
   const [stackReveal, setStackReveal] = useState(false);
+
+  const demoModuleId: CoreModuleId | null =
+    activeModuleRow != null
+      ? coreIdFromLifecycleRow(lifecycleCapabilities[activeModuleRow].id)
+      : null;
 
   /* Per-row reveal when Modules tab is visible */
   useEffect(() => {
@@ -528,7 +535,8 @@ export default function ProductsSection() {
           )}
 
           {platformTab === 'modules' && (
-        <div ref={modulesWrapRef}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-start">
+          <div ref={modulesWrapRef} className="lg:col-span-7 min-w-0">
           {lifecycleCapabilities.map((mod, i) => (
             <div
               key={mod.id}
@@ -680,6 +688,10 @@ export default function ProductsSection() {
               </div>
             </div>
           ))}
+          </div>
+          <div className="lg:col-span-5">
+            <PlatformModuleDemo moduleId={demoModuleId} variant="sidebar" />
+          </div>
         </div>
           )}
         </div>

@@ -78,7 +78,7 @@ export default function PlatformArchitectureSection() {
         </p>
 
         <h2
-          className="arch-reveal"
+          className="arch-reveal max-sm:whitespace-normal sm:whitespace-nowrap"
           style={{
             ...revealStyle,
             fontFamily: "'Exo 2', sans-serif",
@@ -88,14 +88,13 @@ export default function PlatformArchitectureSection() {
             letterSpacing: '0.04em',
             color: '#1e2830',
             margin: '0 0 clamp(28px, 4vw, 44px)',
-            maxWidth: '820px',
           }}
         >
           From ingestion to output —{' '}
           <span style={{ color: '#92a4ac' }}>one connected core.</span>
         </h2>
 
-        <div style={{ marginBottom: 'clamp(28px, 5vw, 40px)' }}>
+        <div className="arch-reveal" style={{ ...revealStyle, marginBottom: 'clamp(28px, 5vw, 40px)' }}>
           <PlatformArchitectureDiagram />
         </div>
 

@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'wouter';
 import Navbar from '@/components/Navbar';
 import PlatformArchitectureDiagram from '@/components/PlatformArchitectureDiagram';
+import PlatformModuleDemo from '@/components/PlatformModuleDemo';
 import {
   architecturePillars,
   certifications,
@@ -159,6 +160,8 @@ export default function PlatformArchitecture() {
             onModuleSelect={handleModuleSelect}
           />
         </div>
+
+        <PlatformModuleDemo moduleId={selectedModuleId} />
 
         <section
           className="glass-panel"

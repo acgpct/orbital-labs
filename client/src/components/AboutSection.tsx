@@ -11,7 +11,7 @@ import {
   HANDOFF,
 } from '@shared/hero-about-handoff';
 
-const ABOUT_BG = '/section-about-solar-mist.png';
+const ABOUT_PROMO = '/orbital-labs-promo-v7.mp4';
 
 const metaTags = ['Renewable energy', 'Full lifecycle', 'Portfolio OS'];
 
@@ -77,6 +77,7 @@ const pillarBodyStyle: CSSProperties = {
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const promoVideoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
@@ -90,6 +91,20 @@ export default function AboutSection() {
       }
     }, { threshold: 0.08 });
     if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const video = promoVideoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        void video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    }, { threshold: 0.35 });
+    observer.observe(video);
     return () => observer.disconnect();
   }, []);
 
@@ -113,49 +128,6 @@ export default function AboutSection() {
       <div className="absolute inset-0 pointer-events-none">
         {/* Tonal rail: mist (from Solutions) → white (into Contact) */}
         <div className="absolute inset-0" style={{ background: cssAboutSectionGradient() }} />
-
-        {/* Solar photo — full height, feathered in toward the bottom */}
-        <img
-          src={ABOUT_BG}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full"
-          style={{
-            objectFit: 'cover',
-            objectPosition: 'center bottom',
-            WebkitMaskImage: `linear-gradient(to bottom,
-              transparent 0%,
-              rgba(0,0,0,0.12) 22%,
-              rgba(0,0,0,0.35) 40%,
-              rgba(0,0,0,0.65) 58%,
-              rgba(0,0,0,0.9) 76%,
-              #000 92%)`,
-            maskImage: `linear-gradient(to bottom,
-              transparent 0%,
-              rgba(0,0,0,0.12) 22%,
-              rgba(0,0,0,0.35) 40%,
-              rgba(0,0,0,0.65) 58%,
-              rgba(0,0,0,0.9) 76%,
-              #000 92%)`,
-            WebkitMaskSize: '100% 100%',
-            maskSize: '100% 100%',
-          }}
-        />
-
-        {/* Feather photo into the tonal rail — lighter so glass panels have depth to blur */}
-        <div
-          className="absolute inset-x-0 top-0"
-          style={{
-            height: '45%',
-            background: `linear-gradient(to bottom,
-              ${HANDOFF.mist} 0%,
-              rgba(229,238,244,0.72) 22%,
-              rgba(237,243,247,0.32) 42%,
-              rgba(244,249,251,0.08) 58%,
-              transparent 100%)`,
-          }}
-        />
-        <div className="absolute inset-0" style={{ background: 'rgba(249,251,253,0.03)' }} />
 
         {/* Soft seam from Solutions above */}
         <div
@@ -201,7 +173,6 @@ export default function AboutSection() {
               }}
             >
               Built for teams who run portfolios.
-              <span style={{ color: '#92a4ac' }}> Not the spreadsheets between them.</span>
             </h2>
 
             <p
@@ -217,7 +188,7 @@ export default function AboutSection() {
                 maxWidth: '420px',
               }}
             >
-              Orbital Labs builds the intelligence layer for renewable and hybrid energy portfolios — one operating system from pipeline through operations.
+              One intelligence layer for renewable portfolios — pipeline through operations.
             </p>
 
             <p className="about-reveal" style={{ ...revealStyle, ...labelStyle, color: '#586879', margin: 0 }}>
@@ -251,6 +222,33 @@ export default function AboutSection() {
                 <p style={pillarBodyStyle}>{pillar.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Company film */}
+        <div
+          className="about-reveal mt-12 md:mt-14 lg:mt-16"
+          style={{ ...revealStyle, transitionDelay: '210ms' }}
+        >
+          <div
+            style={{
+              ...glassPanel,
+              padding: 'clamp(10px, 1.5vw, 14px)',
+              overflow: 'hidden',
+            }}
+          >
+            <video
+              ref={promoVideoRef}
+              className="block w-full aspect-video rounded-[2px]"
+              style={{ background: '#1e2830' }}
+              src={ABOUT_PROMO}
+              controls
+              autoPlay
+              muted
+              playsInline
+              preload="auto"
+              aria-label="Orbital Labs company film"
+            />
           </div>
         </div>
 

@@ -49,6 +49,28 @@ export const coreModules = [
 
 export type CoreModuleId = (typeof coreModules)[number]['id'];
 
+/** Lifecycle modules with an interactive product demo on the architecture page */
+export const demoModuleIds = ['pipeline-spv', 'development', 'reporting'] as const satisfies readonly CoreModuleId[];
+
+export type DemoModuleId = (typeof demoModuleIds)[number];
+
+export const PLATFORM_MODULE_DEMO = '/platform-module-demo.mov';
+
+export function moduleHasDemo(id: CoreModuleId | null | undefined): id is DemoModuleId {
+  return id != null && (demoModuleIds as readonly string[]).includes(id);
+}
+
+/** Maps lifecycle row ids (M1…M6) to core module ids for demo wiring */
+export const lifecycleRowToCoreId = {
+  M1: 'pipeline-spv',
+  M2: 'development',
+  M6: 'reporting',
+} as const satisfies Partial<Record<string, CoreModuleId>>;
+
+export function coreIdFromLifecycleRow(rowId: string): CoreModuleId | null {
+  return (lifecycleRowToCoreId as Record<string, CoreModuleId | undefined>)[rowId] ?? null;
+}
+
 export const architecturePillars = [
   {
     id: 'data-model',
