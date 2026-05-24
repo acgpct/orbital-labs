@@ -3,8 +3,12 @@
  */
 import { useEffect, useRef } from 'react';
 import { LANDING_HERO_IMAGE_URL } from '@shared/landing-hero';
+import { cssHeroPhotoMask } from '@shared/hero-about-handoff';
 
 const CONTINUUM_HEIGHT = '100dvh';
+/** Taller image box = slightly zoomed out, showing more of the fog / figure at the bottom. */
+const HERO_IMAGE_HEIGHT = '122%';
+const heroPhotoMask = cssHeroPhotoMask();
 
 export default function LandingContinuum() {
   const layerRef = useRef<HTMLDivElement>(null);
@@ -28,14 +32,25 @@ export default function LandingContinuum() {
       }}
       aria-hidden
     >
-      <div ref={layerRef} className="h-full w-full will-change-transform" style={{ minHeight: CONTINUUM_HEIGHT }}>
+      <div
+        ref={layerRef}
+        className="h-full w-full will-change-transform"
+        style={{ minHeight: CONTINUUM_HEIGHT }}
+      >
         <img
           src={LANDING_HERO_IMAGE_URL}
           alt=""
-          className="block h-full w-full object-cover"
+          className="block w-full object-cover"
           style={{
+            height: HERO_IMAGE_HEIGHT,
+            minHeight: HERO_IMAGE_HEIGHT,
             objectPosition: 'center top',
-            minHeight: '100%',
+            WebkitMaskImage: heroPhotoMask,
+            maskImage: heroPhotoMask,
+            WebkitMaskSize: '100% 100%',
+            maskSize: '100% 100%',
+            WebkitMaskRepeat: 'no-repeat',
+            maskRepeat: 'no-repeat',
           }}
         />
       </div>

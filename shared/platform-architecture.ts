@@ -1,0 +1,84 @@
+export const dataIngestion = [
+  'SCADA / IoT Sensors',
+  'ERP & Accounting',
+  'Grid Operators',
+  'Weather & Market Data',
+  'Legal & Contract Systems',
+] as const;
+
+export const architectureOutputs = [
+  'Investor Reports',
+  'Lender Dashboards',
+  'Regulatory Filings',
+  'Board Packs',
+  'API / Integrations',
+] as const;
+
+export const coreModules = [
+  {
+    id: 'pipeline-spv',
+    title: 'Pipeline & SPV',
+    summary: 'Stage-gate pipeline, capital allocation, SPV composition and ownership — one graph from deal idea to financial close.',
+  },
+  {
+    id: 'development',
+    title: 'Development',
+    summary: 'Land options, permits with lapse alerts, grid milestones, and stakeholder mapping in one development tracker.',
+  },
+  {
+    id: 'contracts',
+    title: 'Contracts',
+    summary: 'EPC, LTSA, O&M, PPA, offtake, and ancillaries — retention, milestones, indexation, and renewal alerts.',
+  },
+  {
+    id: 'construction',
+    title: 'Construction',
+    summary: 'EPC milestones, capex, change orders, commissioning checklists, and COD handover with warranty dates flowing forward.',
+  },
+  {
+    id: 'asset-management',
+    title: 'Asset Management',
+    summary: 'Mixed-OEM monitoring, variance investigation, settlement reconciliation, work orders, and BESS dispatch at fleet scale.',
+  },
+  {
+    id: 'reporting',
+    title: 'Reporting',
+    summary: 'Lender, investor, and board packs; CSRD; transaction rooms — same core data for operations and capital events.',
+  },
+] as const;
+
+export type CoreModuleId = (typeof coreModules)[number]['id'];
+
+export const architecturePillars = [
+  {
+    id: 'data-model',
+    label: 'The data model',
+    summary:
+      'One shared graph for every project, SPV, asset, contract, permit, and operating record — origination through operations without re-keying.',
+    body: 'A single shared model holds every project, SPV, asset, contract, permit, stakeholder, and operating record. Information captured at origination flows through financing, construction, and operations without re-keying. This is what makes it an operating system rather than another application.',
+  },
+  {
+    id: 'methodology-ip',
+    label: 'Methodology IP',
+    summary:
+      'Proprietary calculation engine, regulatory libraries, and workflow templates — extended by every portfolio’s edge cases.',
+    body: "The calculation engine, regulatory libraries, and workflow templates are proprietary. Each new customer extends the model with their portfolio's edge cases. Each year of operation accrues benchmarks against which new entrants cannot compete without years of customer data.",
+  },
+  {
+    id: 'multi-country',
+    label: 'Multi-country depth',
+    summary:
+      'Phase 1 EU geographies with sovereign and regional cloud deployment for data residency.',
+    body: 'Phase 1 geographies: Poland, Hungary, Romania, Italy, Spain, Germany. Year 2 adds United Kingdom and the Nordics. Sovereign and regional cloud deployment supported natively — meeting EU buyer requirements for data residency.',
+  },
+] as const;
+
+export const certifications = [
+  { name: 'GDPR', target: 'Day one', note: 'Designed-in, not added later' },
+  { name: 'ISO 27001', target: 'Month 12', note: 'Default expectation for EU enterprise buyers' },
+  { name: 'SOC 2 Type II', target: 'Month 18', note: 'Required for North American expansion' },
+  { name: 'EU AI Act', target: 'Month 12', note: 'Compliance posture documented, external legal review Y1' },
+] as const;
+
+export const technologyStack =
+  'Cloud-native. Data layer: PostgreSQL, TimescaleDB, S3. Backend: Python (FastAPI) and TypeScript (Node.js). Frontend: React. Infrastructure: Kubernetes on EKS/GKE, Terraform, CI/CD. Multi-tenancy via tenant-scoped schemas. TLS 1.3 in transit, AES-256 at rest. Customer-managed encryption keys available for sovereign tiers.';

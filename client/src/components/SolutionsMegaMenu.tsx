@@ -1,9 +1,10 @@
 /*
  * ORBITAL LABS — Solutions mega-menu (desktop dropdown + mobile accordion)
- * Industry & buyers only; lifecycle modules are under Platform (#products).
+ * Industry & buyers only; lifecycle surfaces are under Platform (#products).
  */
 
 import type { ReactNode } from 'react';
+import { solutionProfiles, solutionProfilePath } from '@shared/solution-profiles';
 
 const labelStyle = "block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.28em] uppercase text-[#92a4ac] mb-3";
 const linkStyle =
@@ -23,24 +24,22 @@ export function SolutionsMegaMenuPanel({ onNavigate, variant = 'dropdown' }: Pro
       <div className={col}>
         <span className={labelStyle}>Industry — renewable energy</span>
         <nav className="flex flex-col gap-0.5" aria-label="Industries and buyer types">
-          <MegaLink href="#solutions-industry" onNavigate={onNavigate} className={linkStyle}>
+          <MegaLink href="#solutions" onNavigate={onNavigate} className={linkStyle}>
             Overview
           </MegaLink>
-          <MegaLink href="#solutions-buyers" onNavigate={onNavigate} className={linkStyle}>
-            Infrastructure fund portfolios
-          </MegaLink>
-          <MegaLink href="#solutions-buyers" onNavigate={onNavigate} className={linkStyle}>
-            Mid-size IPPs &amp; developers
-          </MegaLink>
-          <MegaLink href="#solutions-buyers" onNavigate={onNavigate} className={linkStyle}>
-            Large IPPs &amp; listed platforms
-          </MegaLink>
-          <MegaLink href="#solutions-buyers" onNavigate={onNavigate} className={linkStyle}>
-            EPC &amp; owners&apos; engineers
-          </MegaLink>
+          {solutionProfiles.map((profile) => (
+            <MegaLink
+              key={profile.id}
+              href={solutionProfilePath(profile.id)}
+              onNavigate={onNavigate}
+              className={linkStyle}
+            >
+              {profile.shortLabel}
+            </MegaLink>
+          ))}
         </nav>
         <MegaLink href="#products" onNavigate={onNavigate} className={`${linkStyle} mt-8 inline-block text-[0.72rem] tracking-wide text-[#586879]`}>
-          Platform &amp; modules →
+          Platform &amp; lifecycle →
         </MegaLink>
       </div>
 

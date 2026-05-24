@@ -4,6 +4,7 @@
  */
 
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { cssSectionVeilBottom, cssSectionVeilTop, HANDOFF } from '@shared/hero-about-handoff';
 import {
   Bar,
   BarChart,
@@ -138,14 +139,17 @@ export default function ContactEstimate() {
           />
           <div
             className="absolute left-0 right-0 top-0 z-[1]"
-            style={{ height: '180px', background: 'linear-gradient(to bottom, #ffffff 0%, transparent 100%)' }}
+            style={{
+              height: 'clamp(160px, 26vh, 300px)',
+              background: cssSectionVeilTop(HANDOFF.paper, HANDOFF.paperRgb),
+            }}
           />
           <div className="absolute inset-0 z-[1]" style={{ background: 'rgba(249,251,253,0.03)' }} />
           <div
             className="absolute bottom-0 left-0 right-0 z-[1]"
             style={{
-              height: '200px',
-              background: 'linear-gradient(to bottom, transparent 0%, rgba(249,251,253,0.9) 80%, #ffffff 100%)',
+              height: 'clamp(180px, 24vh, 280px)',
+              background: cssSectionVeilBottom(HANDOFF.paper, HANDOFF.paperRgb),
             }}
           />
         </div>
@@ -161,7 +165,7 @@ export default function ContactEstimate() {
             transition: 'opacity 1s ease 0.2s',
           }}
         >
-          06 / Contact — Estimate
+          06 / Contact
         </div>
 
         <div className="relative z-10 flex flex-col px-5 pb-8 pt-16 sm:px-10 md:px-14 lg:px-24">
@@ -189,7 +193,7 @@ export default function ContactEstimate() {
                     marginBottom: '12px',
                   }}
                 >
-                  Estimate your efficiency gain
+                  Model your potential savings
                 </p>
                 <h2
                   style={{
@@ -203,7 +207,7 @@ export default function ContactEstimate() {
                     marginBottom: 'clamp(20px,3vh,32px)',
                   }}
                 >
-                  How much could you reclaim?
+                  How much could you save?
                 </h2>
               </div>
 

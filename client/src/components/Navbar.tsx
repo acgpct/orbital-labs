@@ -1,6 +1,6 @@
 /*
  * ORBITAL LABS — Navbar
- * Mega-menus: Platform (stack & modules) + Solutions (industry & buyers)
+ * Mega-menus: Platform (stack & lifecycle) + Solutions (industry & buyers)
  */
 
 import { useState, useEffect, useRef } from 'react';

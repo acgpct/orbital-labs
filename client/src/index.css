@@ -185,6 +185,32 @@
     border: 1px solid rgba(212, 215, 196, 0.6);
   }
 
+  /* Frosted glass panel — matches ContactEstimate calculator */
+  .glass-panel {
+    background: linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.48) 0%,
+      rgba(255, 255, 255, 0.16) 45%,
+      rgba(249, 251, 253, 0.1) 100%
+    );
+    backdrop-filter: blur(36px) saturate(165%);
+    -webkit-backdrop-filter: blur(36px) saturate(165%);
+    border: 1px solid rgba(255, 255, 255, 0.62);
+    box-shadow: none;
+  }
+
+  .glass-panel-sm {
+    background: linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(255, 255, 255, 0.14) 50%,
+      rgba(249, 251, 253, 0.08) 100%
+    );
+    backdrop-filter: blur(20px) saturate(155%);
+    -webkit-backdrop-filter: blur(20px) saturate(155%);
+    border: 1px solid rgba(255, 255, 255, 0.48);
+  }
+
   /* Nav link hover */
   .nav-link {
     position: relative;
@@ -331,5 +357,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Orbital core platform — glass frame wrapper */
+  .platform-core-frame {
+    position: relative;
+    border-radius: 11px;
+  }
+
+  .platform-core-inner {
+    position: relative;
+    z-index: 1;
+    border-radius: 9.5px;
   }
 }

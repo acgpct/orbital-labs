@@ -59,7 +59,7 @@ export default function HeroSection() {
           className="pointer-events-none absolute inset-x-0 bottom-0"
           style={{
             zIndex: 6,
-            height: 'clamp(190px, 30vh, 440px)',
+            height: 'clamp(280px, 46vh, 560px)',
             background: cssHeroBottomFade(),
           }}
         />
@@ -67,93 +67,113 @@ export default function HeroSection() {
 
       <div
         ref={textRef}
-        className="absolute inset-0 flex flex-col justify-center items-center px-8 pt-16"
-        style={{ zIndex: 10 }}
+        className="absolute inset-0 flex flex-col items-center px-8 pt-16"
+        style={{
+          zIndex: 10,
+          paddingBottom: 'clamp(96px, 13vh, 148px)',
+        }}
       >
-        <p
-          style={{
-            fontFamily: "'Space Mono', monospace",
-            fontSize: '0.6rem',
-            letterSpacing: '0.35em',
-            textTransform: 'uppercase',
-            color: 'rgba(198,209,219,0.8)',
-            marginBottom: '1.2rem',
-            textAlign: 'center',
-          }}
-        >
-          Orbital Labs
-        </p>
-
-        <h1
-          style={{
-            fontFamily: "'Exo 2', sans-serif",
-            fontWeight: 200,
-            fontSize: 'clamp(2rem, 5vw, 5rem)',
-            lineHeight: 1.1,
-            letterSpacing: '0.05em',
-            color: '#ffffff',
-            margin: 0,
-            maxWidth: '16em',
-            textAlign: 'center',
-            textShadow: '0 2px 32px rgba(0,0,0,0.25)',
-          }}
-        >
-          Advanced Intelligence for Complex Systems
-        </h1>
-
-        <div className="flex items-center justify-center gap-6 mt-6 flex-wrap">
-          <a
-            href="#products"
+        <div className="flex flex-1 w-full flex-col items-center justify-center">
+          <p
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: '0.75rem',
-              letterSpacing: '0.2em',
+              fontFamily: "'Space Mono', monospace",
+              fontSize: '0.6rem',
+              letterSpacing: '0.35em',
               textTransform: 'uppercase',
-              color: '#f9fbfd',
-              background: 'rgba(88,104,121,0.5)',
-              border: '1px solid rgba(198,209,219,0.35)',
-              padding: '10px 24px',
-              backdropFilter: 'blur(12px)',
-              textDecoration: 'none',
-              transition: 'all 0.25s ease',
-            }}
-            onMouseEnter={e => {
-              (e.currentTarget as HTMLElement).style.background = 'rgba(88,104,121,0.8)';
-              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(198,209,219,0.7)';
-            }}
-            onMouseLeave={e => {
-              (e.currentTarget as HTMLElement).style.background = 'rgba(88,104,121,0.5)';
-              (e.currentTarget as HTMLElement).style.borderColor = 'rgba(198,209,219,0.35)';
+              color: 'rgba(198,209,219,0.8)',
+              marginBottom: '1.2rem',
+              textAlign: 'center',
             }}
           >
-            Explore
-          </a>
-          <a
-            href="#contact"
+            Orbital Labs
+          </p>
+
+          <h1
             style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: '0.75rem',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'rgba(198,209,219,0.7)',
-              textDecoration: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '8px',
-              transition: 'color 0.25s ease',
+              fontFamily: "'Exo 2', sans-serif",
+              fontWeight: 200,
+              fontSize: 'clamp(2rem, 5vw, 5rem)',
+              lineHeight: 1.1,
+              letterSpacing: '0.05em',
+              color: '#ffffff',
+              margin: 0,
+              maxWidth: '16em',
+              textAlign: 'center',
+              textShadow: '0 2px 32px rgba(0,0,0,0.25)',
             }}
-            onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#f9fbfd')}
-            onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(198,209,219,0.7)')}
           >
-            Get in touch
-            <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
-              <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+            Advanced Intelligence for Complex Systems
+          </h1>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-6">
+            <a
+              href="#products"
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: '0.75rem',
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                color: '#f9fbfd',
+                background: 'rgba(88,104,121,0.5)',
+                border: '1px solid rgba(198,209,219,0.35)',
+                padding: '10px 24px',
+                backdropFilter: 'blur(12px)',
+                textDecoration: 'none',
+                transition: 'all 0.25s ease',
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLElement).style.background = 'rgba(88,104,121,0.8)';
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(198,209,219,0.7)';
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLElement).style.background = 'rgba(88,104,121,0.5)';
+                (e.currentTarget as HTMLElement).style.borderColor = 'rgba(198,209,219,0.35)';
+              }}
+            >
+              Explore
+            </a>
+            <a
+              href="#contact"
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: '0.75rem',
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                color: 'rgba(198,209,219,0.7)',
+                textDecoration: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                transition: 'color 0.25s ease',
+              }}
+              onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#f9fbfd')}
+              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(198,209,219,0.7)')}
+            >
+              Get in touch
+              <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+                <path d="M1 5h14M10 1l5 4-5 4" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div
+          className="pointer-events-none flex flex-col items-center"
+          style={{ marginBottom: 'clamp(20px, 3.5vh, 40px)' }}
+          aria-hidden
+        >
+          <div
+            style={{
+              width: '1px',
+              height: '48px',
+              background: 'linear-gradient(to bottom, rgba(198,209,219,0.7), transparent)',
+              animation: 'scroll-pulse 2.4s ease-in-out infinite',
+            }}
+          />
         </div>
       </div>
 
-      <div ref={sideRef} className="absolute left-5 bottom-12 flex flex-col gap-1" style={{ zIndex: 10 }}>
+      <div ref={sideRef} className="absolute left-5 bottom-16 flex flex-col gap-1" style={{ zIndex: 10 }}>
         {['_01', '_02', '_03', '_04', '_05'].map((n, i) => (
           <span
             key={n}
@@ -168,17 +188,6 @@ export default function HeroSection() {
             {n}
           </span>
         ))}
-      </div>
-
-      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style={{ zIndex: 10 }}>
-        <div
-          style={{
-            width: '1px',
-            height: '48px',
-            background: 'linear-gradient(to bottom, rgba(198,209,219,0.7), transparent)',
-            animation: 'scroll-pulse 2.4s ease-in-out infinite',
-          }}
-        />
       </div>
 
       <style>{`

@@ -1,9 +1,10 @@
 /*
  * ORBITAL LABS — Platform mega-menu (navbar dropdown)
- * Stack surfaces + lifecycle module deep-links (#module-m1 … #module-m7).
+ * Stack tiers (API / Platform / Embedded) + lifecycle capability deep-links (#module-m1 … #module-m6).
  */
 
 import type { ReactNode } from 'react';
+import { Link } from 'wouter';
 
 const labelStyle =
   "block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.28em] uppercase text-[#92a4ac] mb-3";
@@ -13,20 +14,18 @@ const typeStyle =
   "font-['Space_Mono',monospace] text-[0.5rem] tracking-[0.14em] uppercase text-[#c6d1db]";
 
 const stackItems = [
-  { href: '#product-orbital-core', name: 'Orbital Core', type: 'Platform' },
-  { href: '#product-orbital-sense', name: 'Orbital Sense', type: 'Intelligence layer' },
-  { href: '#product-orbital-adapt', name: 'Orbital Adapt', type: 'Adaptive ML' },
-  { href: '#product-orbital-consult', name: 'Orbital Consult', type: 'Professional services' },
+  { href: '#product-api', name: 'API', type: 'Integrate' },
+  { href: '#product-platform', name: 'Platform', type: 'Use' },
+  { href: '#product-embedded', name: 'Embedded', type: 'Roll out' },
 ] as const;
 
-const moduleItems = [
+const lifecycleItems = [
   { href: '#module-m1', name: 'Pipeline & SPV', id: 'M1' },
   { href: '#module-m2', name: 'Development', id: 'M2' },
-  { href: '#module-m3', name: 'Financing', id: 'M3' },
-  { href: '#module-m4', name: 'Contracts', id: 'M4' },
-  { href: '#module-m5', name: 'Construction & commissioning', id: 'M5' },
-  { href: '#module-m6', name: 'Asset management & O&M', id: 'M6' },
-  { href: '#module-m7', name: 'Reporting & capital recycling', id: 'M7' },
+  { href: '#module-m3', name: 'Contracts', id: 'M3' },
+  { href: '#module-m4', name: 'Construction & commissioning', id: 'M4' },
+  { href: '#module-m5', name: 'Asset management & O&M', id: 'M5' },
+  { href: '#module-m6', name: 'Reporting & disclosures', id: 'M6' },
 ] as const;
 
 type Props = {
@@ -43,6 +42,29 @@ export function ProductsMegaMenuPanel({ onNavigate, variant = 'dropdown' }: Prop
   return (
     <div className={wrap}>
       <div className={variant === 'stacked' ? 'w-full' : 'md:col-span-4'}>
+        <span className={labelStyle}>Lifecycle</span>
+        <nav className="flex flex-col divide-y divide-[rgba(88,104,121,0.1)]" aria-label="Lifecycle capabilities">
+          {lifecycleItems.map((item) => (
+            <MegaLink key={item.href} href={item.href} onNavigate={onNavigate} className="block group">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2.5">
+                <span className="font-['Space_Grotesk',sans-serif] text-[0.82rem] text-[#1e2830] group-hover:text-[#586879] transition-colors">
+                  {item.name}
+                </span>
+                <span className={typeStyle}>{item.id}</span>
+              </div>
+            </MegaLink>
+          ))}
+        </nav>
+        <MegaLink
+          href="#products"
+          onNavigate={onNavigate}
+          className={`${linkStyle} mt-6 inline-block text-[0.72rem] tracking-wide text-[#586879]`}
+        >
+          Open platform section →
+        </MegaLink>
+      </div>
+
+      <div className={variant === 'stacked' ? 'w-full' : 'md:col-span-4'}>
         <span className={labelStyle}>Stack</span>
         <nav className="flex flex-col divide-y divide-[rgba(88,104,121,0.1)]" aria-label="Platform stack">
           {stackItems.map((item) => (
@@ -58,29 +80,6 @@ export function ProductsMegaMenuPanel({ onNavigate, variant = 'dropdown' }: Prop
         </nav>
       </div>
 
-      <div className={variant === 'stacked' ? 'w-full' : 'md:col-span-4'}>
-        <span className={labelStyle}>Modules</span>
-        <nav className="flex flex-col divide-y divide-[rgba(88,104,121,0.1)]" aria-label="Lifecycle modules">
-          {moduleItems.map((item) => (
-            <MegaLink key={item.href} href={item.href} onNavigate={onNavigate} className="block group">
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-2.5">
-                <span className="font-['Space_Grotesk',sans-serif] text-[0.82rem] text-[#1e2830] group-hover:text-[#586879] transition-colors">
-                  {item.name}
-                </span>
-                <span className={typeStyle}>{item.id}</span>
-              </div>
-            </MegaLink>
-          ))}
-        </nav>
-        <MegaLink
-          href="#products"
-          onNavigate={onNavigate}
-          className={`${linkStyle} mt-8 inline-block text-[0.72rem] tracking-wide text-[#586879]`}
-        >
-          Open platform section →
-        </MegaLink>
-      </div>
-
       <div
         className={
           variant === 'stacked'
@@ -93,17 +92,17 @@ export function ProductsMegaMenuPanel({ onNavigate, variant = 'dropdown' }: Prop
         }}
       >
         <span className="block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.22em] uppercase text-[rgba(249,251,253,0.55)] mb-4">
-          One platform
+          Portfolio OS
         </span>
         <p className="font-['Space_Grotesk',sans-serif] text-[0.82rem] text-[#f9fbfd] leading-snug mb-5">
-          Four stack surfaces, one model, seven lifecycle modules — from pipeline to exit, without siloed tools.
+          One graph and runtime across origination → build → operate → reporting — renewables-native, without a shelf of disjoint tools.
         </p>
         <MegaLink
-          href="#products"
+          href="/platform/architecture"
           onNavigate={onNavigate}
           className="font-['Space_Mono',monospace] text-[0.55rem] tracking-[0.2em] uppercase text-[rgba(249,251,253,0.85)] border-b border-[rgba(249,251,253,0.25)] pb-0.5 inline-block hover:text-white"
         >
-          View platform
+          Platform architecture
         </MegaLink>
       </div>
     </div>
@@ -121,8 +120,18 @@ function MegaLink({
   onNavigate?: () => void;
   className?: string;
 }) {
+  const handleClick = () => onNavigate?.();
+
+  if (href.startsWith('/')) {
+    return (
+      <Link href={href} className={className} onClick={handleClick}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <a href={href} className={className} onClick={() => onNavigate?.()}>
+    <a href={href} className={className} onClick={handleClick}>
       {children}
     </a>
   );
