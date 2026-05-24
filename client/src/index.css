@@ -211,6 +211,19 @@
     border: 1px solid rgba(255, 255, 255, 0.48);
   }
 
+  /* Nested cells inside a glass-panel shell */
+  .glass-panel-inset {
+    background: linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.22) 50%,
+      rgba(249, 251, 253, 0.14) 100%
+    );
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.58);
+  }
+
   /* Nav link hover */
   .nav-link {
     position: relative;
@@ -359,15 +372,69 @@
     background-clip: text;
   }
 
-  /* Orbital core platform — glass frame wrapper */
+  /* Orbital core platform — border trace highlight */
   .platform-core-frame {
     position: relative;
     border-radius: 11px;
+    border-color: rgba(255, 255, 255, 0.38);
+    isolation: isolate;
+  }
+
+  .platform-core-border-trace {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+    overflow: visible;
+  }
+
+  .platform-core-border-glow {
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-dasharray: 14 86;
+    opacity: 0.55;
+    animation:
+      platform-core-border-run 5.5s linear infinite,
+      platform-core-border-pulse 2.4s ease-in-out infinite;
+  }
+
+  .platform-core-border-stroke {
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-dasharray: 14 86;
+    animation:
+      platform-core-border-run 5.5s linear infinite,
+      platform-core-border-pulse 2.4s ease-in-out infinite;
   }
 
   .platform-core-inner {
     position: relative;
     z-index: 1;
     border-radius: 9.5px;
+    overflow: hidden;
+  }
+
+  @keyframes platform-core-border-run {
+    to { stroke-dashoffset: -100; }
+  }
+
+  @keyframes platform-core-border-pulse {
+    0%, 100% { opacity: 0.35; }
+    50% { opacity: 1; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .platform-core-border-glow {
+      display: none;
+    }
+
+    .platform-core-border-stroke {
+      animation: none;
+      stroke-dasharray: none;
+      opacity: 1;
+      stroke: rgba(198, 209, 219, 0.65);
+    }
   }
 }

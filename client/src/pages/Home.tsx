@@ -12,8 +12,18 @@ import PlatformArchitectureSection from '@/components/PlatformArchitectureSectio
 import ContactSection from '@/components/ContactSection';
 import LandingContinuum from '@/components/LandingContinuum';
 import { HANDOFF } from '@shared/hero-about-handoff';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (!hash || hash.startsWith('#module-') || hash.startsWith('#product-')) return;
+    const id = hash.slice(1);
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, []);
+
   return (
     <div style={{ background: HANDOFF.mist }}>
       <Navbar />

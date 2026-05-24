@@ -3,8 +3,9 @@
  * Stack tiers (API / Platform / Embedded) + lifecycle capability deep-links (#module-m1 … #module-m6).
  */
 
-import type { ReactNode } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 import { Link } from 'wouter';
+import { homeSection, navigateToHomeSection } from '@shared/site-nav';
 
 const labelStyle =
   "block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.28em] uppercase text-[#92a4ac] mb-3";
@@ -14,18 +15,18 @@ const typeStyle =
   "font-['Space_Mono',monospace] text-[0.5rem] tracking-[0.14em] uppercase text-[#c6d1db]";
 
 const stackItems = [
-  { href: '#product-api', name: 'API', type: 'Integrate' },
-  { href: '#product-platform', name: 'Platform', type: 'Use' },
-  { href: '#product-embedded', name: 'Embedded', type: 'Roll out' },
+  { href: homeSection('#product-api'), name: 'API', type: 'Integrate' },
+  { href: homeSection('#product-platform'), name: 'Platform', type: 'Use' },
+  { href: homeSection('#product-embedded'), name: 'Embedded', type: 'Roll out' },
 ] as const;
 
 const lifecycleItems = [
-  { href: '#module-m1', name: 'Pipeline & SPV', id: 'M1' },
-  { href: '#module-m2', name: 'Development', id: 'M2' },
-  { href: '#module-m3', name: 'Contracts', id: 'M3' },
-  { href: '#module-m4', name: 'Construction & commissioning', id: 'M4' },
-  { href: '#module-m5', name: 'Asset management & O&M', id: 'M5' },
-  { href: '#module-m6', name: 'Reporting & disclosures', id: 'M6' },
+  { href: homeSection('#module-m1'), name: 'Pipeline & SPV', id: 'M1' },
+  { href: homeSection('#module-m2'), name: 'Development', id: 'M2' },
+  { href: homeSection('#module-m3'), name: 'Contracts', id: 'M3' },
+  { href: homeSection('#module-m4'), name: 'Construction & commissioning', id: 'M4' },
+  { href: homeSection('#module-m5'), name: 'Asset management & O&M', id: 'M5' },
+  { href: homeSection('#module-m6'), name: 'Reporting & disclosures', id: 'M6' },
 ] as const;
 
 type Props = {
@@ -56,7 +57,7 @@ export function ProductsMegaMenuPanel({ onNavigate, variant = 'dropdown' }: Prop
           ))}
         </nav>
         <MegaLink
-          href="#products"
+          href={homeSection('#products')}
           onNavigate={onNavigate}
           className={`${linkStyle} mt-6 inline-block text-[0.72rem] tracking-wide text-[#586879]`}
         >
@@ -120,11 +121,17 @@ function MegaLink({
   onNavigate?: () => void;
   className?: string;
 }) {
-  const handleClick = () => onNavigate?.();
+  const handleClick = (e: MouseEvent) => {
+    onNavigate?.();
+    if (href.includes('#')) {
+      const hash = href.slice(href.indexOf('#'));
+      navigateToHomeSection(hash, e);
+    }
+  };
 
-  if (href.startsWith('/')) {
+  if (href.startsWith('/') && !href.includes('#')) {
     return (
-      <Link href={href} className={className} onClick={handleClick}>
+      <Link href={href} className={className} onClick={() => onNavigate?.()}>
         {children}
       </Link>
     );

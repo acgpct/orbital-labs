@@ -4,8 +4,10 @@
  */
 
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'wouter';
 import { SolutionsMegaMenuPanel } from '@/components/SolutionsMegaMenu';
 import { ProductsMegaMenuPanel } from '@/components/ProductsMegaMenu';
+import { homeSection, navigateToHomeSection } from '@shared/site-nav';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -78,7 +80,7 @@ export default function Navbar() {
       }}
     >
       <div className="container flex items-center justify-between h-16">
-        <a href="#" className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-7 h-7 flex-shrink-0">
             <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
               <circle cx="14" cy="14" r="3" fill={scrolled ? '#1e2830' : 'rgba(255,255,255,0.9)'} />
@@ -89,13 +91,18 @@ export default function Navbar() {
           <span style={{ fontFamily: "'Exo 2', sans-serif", color: navLogo, fontWeight: 600, fontSize: '0.95rem', letterSpacing: '0.08em', textTransform: 'uppercase', transition: 'color 0.3s ease' }}>
             Orbital Labs
           </span>
-        </a>
+        </Link>
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           <div className="relative" onMouseEnter={openProducts} onMouseLeave={scheduleCloseProducts}>
             <div className="flex items-center gap-1">
-              <a href="#products" className="nav-link text-sm" style={{ color: navMuted, transition: 'color 0.3s ease' }}>
+              <a
+                href={homeSection('#products')}
+                className="nav-link text-sm"
+                style={{ color: navMuted, transition: 'color 0.3s ease' }}
+                onClick={(e) => navigateToHomeSection('#products', e, () => setProductsOpen(false))}
+              >
                 Platform
               </a>
               <button
@@ -132,7 +139,12 @@ export default function Navbar() {
 
           <div className="relative" onMouseEnter={openSolutions} onMouseLeave={scheduleCloseSolutions}>
             <div className="flex items-center gap-1">
-              <a href="#solutions" className="nav-link text-sm" style={{ color: navMuted, transition: 'color 0.3s ease' }}>
+              <a
+                href={homeSection('#solutions')}
+                className="nav-link text-sm"
+                style={{ color: navMuted, transition: 'color 0.3s ease' }}
+                onClick={(e) => navigateToHomeSection('#solutions', e, () => setSolutionsOpen(false))}
+              >
                 Solutions
               </a>
               <button
@@ -167,15 +179,26 @@ export default function Navbar() {
             )}
           </div>
 
-          <a href="#about" className="nav-link text-sm" style={{ color: navMuted, transition: 'color 0.3s ease' }}>
+          <a
+            href={homeSection('#about')}
+            className="nav-link text-sm"
+            style={{ color: navMuted, transition: 'color 0.3s ease' }}
+            onClick={(e) => navigateToHomeSection('#about', e)}
+          >
             About
           </a>
-          <a href="#contact" className="nav-link text-sm" style={{ color: navMuted, transition: 'color 0.3s ease' }}>
+          <a
+            href={homeSection('#contact')}
+            className="nav-link text-sm"
+            style={{ color: navMuted, transition: 'color 0.3s ease' }}
+            onClick={(e) => navigateToHomeSection('#contact', e)}
+          >
             Contact
           </a>
           <a
-            href="#contact-form"
+            href={homeSection('#contact-form')}
             className="btn-primary text-xs py-2 px-5"
+            onClick={(e) => navigateToHomeSection('#contact-form', e)}
             style={{
               background: scrolled ? 'transparent' : 'rgba(255,255,255,0.1)',
               border: scrolled ? '1px solid rgba(88,104,121,0.35)' : '1px solid rgba(255,255,255,0.25)',
@@ -195,9 +218,9 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — fixed below navbar so page content cannot intercept taps */}
       <div
-        className="md:hidden overflow-hidden transition-all duration-300"
+        className="md:hidden fixed left-0 right-0 top-16 overflow-hidden transition-all duration-300 z-[60]"
         style={{
           maxHeight: menuOpen ? '1600px' : '0',
           background: 'rgba(255,255,255,0.97)',
@@ -242,13 +265,25 @@ export default function Navbar() {
               </div>
             )}
           </div>
-          <a href="#about" className="nav-link text-sm py-1" onClick={closeAllMega}>
+          <a
+            href={homeSection('#about')}
+            className="nav-link text-sm py-1"
+            onClick={(e) => navigateToHomeSection('#about', e, closeAllMega)}
+          >
             About
           </a>
-          <a href="#contact" className="nav-link text-sm py-1" onClick={closeAllMega}>
+          <a
+            href={homeSection('#contact')}
+            className="nav-link text-sm py-1"
+            onClick={(e) => navigateToHomeSection('#contact', e, closeAllMega)}
+          >
             Contact
           </a>
-          <a href="#contact-form" className="btn-primary text-xs py-2 px-5 self-start mt-1" onClick={closeAllMega}>
+          <a
+            href={homeSection('#contact-form')}
+            className="btn-primary text-xs py-2 px-5 self-start mt-1"
+            onClick={(e) => navigateToHomeSection('#contact-form', e, closeAllMega)}
+          >
             Get in Touch
           </a>
         </div>

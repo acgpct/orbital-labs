@@ -14,7 +14,8 @@ import {
 } from '@shared/platform-architecture';
 import { HANDOFF, cssSectionVeilTop } from '@shared/hero-about-handoff';
 
-const PLATFORM_BG = '/section-platform-solar-mist.png';
+const PLATFORM_BG_WEBP = '/section-platform-solar-mist.webp?v=5';
+const PLATFORM_BG = '/section-platform-solar-mist.png?v=5';
 
 type DetailTab = 'pillars' | 'security';
 
@@ -63,13 +64,18 @@ export default function PlatformArchitecture() {
   return (
     <div className="relative min-h-screen" style={{ background: HANDOFF.paper }}>
       <div className="fixed inset-0 pointer-events-none" aria-hidden style={{ zIndex: 0 }}>
-        <img
-          src={PLATFORM_BG}
-          alt=""
-          className="h-full w-full"
-          style={{ objectFit: 'cover', objectPosition: 'right center' }}
-        />
-        <div className="absolute inset-0" style={{ background: 'rgba(249,251,253,0.18)' }} />
+        <picture className="block h-full w-full">
+          <source srcSet={PLATFORM_BG_WEBP} type="image/webp" />
+          <img
+            src={PLATFORM_BG}
+            alt=""
+            className="h-full w-full min-h-full min-w-full"
+            style={{ objectFit: 'cover', objectPosition: 'right bottom' }}
+            decoding="async"
+            fetchPriority="high"
+          />
+        </picture>
+        <div className="absolute inset-0" style={{ background: 'rgba(249,251,253,0.1)' }} />
         <div
           className="absolute inset-x-0 top-0"
           style={{
@@ -80,15 +86,16 @@ export default function PlatformArchitecture() {
         <div
           className="absolute inset-y-0 left-0"
           style={{
-            width: 'min(72%, 880px)',
-            background: 'linear-gradient(to right, rgba(249,251,253,0.78) 0%, rgba(255,255,255,0.35) 55%, rgba(255,255,255,0) 100%)',
+            width: 'min(58%, 720px)',
+            background:
+              'linear-gradient(to right, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.28) 55%, rgba(255,255,255,0) 100%)',
           }}
         />
       </div>
 
-      <div className="relative z-10">
       <Navbar />
 
+      <div className="relative z-10">
       <main className="container pt-28 pb-20 md:pt-32 md:pb-28">
         <Link
           href="/#platform-architecture"
@@ -143,16 +150,10 @@ export default function PlatformArchitecture() {
           }}
         >
           One unified operating system{' '}
-          <span style={{ color: '#92a4ac' }}>for the full asset lifecycle</span>
+          <span style={{ color: '#92a4ac' }}>for the full asset lifecycle.</span>
         </h1>
 
-        <div
-          className="glass-panel"
-          style={{
-            borderRadius: '6px',
-            padding: 'clamp(24px, 4vw, 36px) clamp(20px, 3vw, 32px)',
-          }}
-        >
+        <div style={{ marginBottom: 'clamp(32px, 5vw, 48px)' }}>
           <PlatformArchitectureDiagram
             selectedModuleId={selectedModuleId}
             onModuleSelect={handleModuleSelect}

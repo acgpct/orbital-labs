@@ -5,6 +5,7 @@
 import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import {
+  cssAboutSectionGradient,
   cssSectionVeilBottom,
   cssSectionVeilTop,
   HANDOFF,
@@ -12,12 +13,66 @@ import {
 
 const ABOUT_BG = '/section-about-solar-mist.png';
 
-const values = [
-  { label: 'Precision', body: 'One source of truth across the portfolio — no shadow spreadsheets.' },
-  { label: 'Depth', body: 'Energy domain expertise in product, not generic workflow software.' },
-  { label: 'Trust', body: 'Security and compliance designed in from day one, not bolted on.' },
-  { label: 'Partnership', body: 'We embed with teams until manual work is genuinely gone.' },
+const metaTags = ['Renewable energy', 'Full lifecycle', 'Portfolio OS'];
+
+const pillars = [
+  {
+    id: 'vision',
+    label: 'Vision',
+    body: 'Every asset owner runs on one trusted operating system — from origination to exit.',
+  },
+  {
+    id: 'mission',
+    label: 'Mission',
+    body: 'Replace fragmented tools and re-keying with a single data model, plus embedded engineers who stay until manual work is gone.',
+  },
 ];
+
+const values = [
+  { step: '01', label: 'Precision', body: 'One source of truth across the portfolio — no shadow spreadsheets.' },
+  { step: '02', label: 'Depth', body: 'Energy domain expertise in product, not generic workflow software.' },
+  { step: '03', label: 'Trust', body: 'Security and compliance designed in from day one, not bolted on.' },
+  { step: '04', label: 'Partnership', body: 'We embed with teams until manual work is genuinely gone.' },
+];
+
+const labelStyle: CSSProperties = {
+  fontFamily: "'Space Mono', monospace",
+  fontSize: '0.52rem',
+  letterSpacing: '0.22em',
+  textTransform: 'uppercase',
+  color: '#92a4ac',
+};
+
+/** Matches ContactEstimate calculator card */
+const glassPanel: CSSProperties = {
+  background:
+    'linear-gradient(158deg, rgba(255,255,255,0.48) 0%, rgba(255,255,255,0.16) 45%, rgba(249,251,253,0.1) 100%)',
+  backdropFilter: 'blur(36px) saturate(165%)',
+  WebkitBackdropFilter: 'blur(36px) saturate(165%)',
+  border: '1px solid rgba(255,255,255,0.62)',
+  boxShadow: 'none',
+  borderRadius: '4px',
+  padding: 'clamp(24px,4vw,40px) clamp(24px,3.5vw,44px)',
+};
+
+const pillarLabelStyle: CSSProperties = {
+  fontFamily: "'Space Mono', monospace",
+  fontSize: '0.58rem',
+  letterSpacing: '0.3em',
+  textTransform: 'uppercase',
+  color: 'rgba(88,104,121,0.85)',
+  marginBottom: '12px',
+};
+
+const pillarBodyStyle: CSSProperties = {
+  fontFamily: "'Space Grotesk', sans-serif",
+  fontSize: '0.875rem',
+  lineHeight: 1.65,
+  color: '#414d56',
+  fontWeight: 300,
+  letterSpacing: '0.02em',
+  margin: 0,
+};
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -30,7 +85,7 @@ export default function AboutSection() {
           setTimeout(() => {
             (el as HTMLElement).style.opacity = '1';
             (el as HTMLElement).style.transform = 'translateY(0)';
-          }, i * 100);
+          }, i * 70);
         });
       }
     }, { threshold: 0.08 });
@@ -41,7 +96,7 @@ export default function AboutSection() {
   const revealStyle: CSSProperties = {
     opacity: 0,
     transform: 'translateY(20px)',
-    transition: 'opacity 1s cubic-bezier(0.23,1,0.32,1), transform 1s cubic-bezier(0.23,1,0.32,1)',
+    transition: 'opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1)',
   };
 
   return (
@@ -52,122 +107,203 @@ export default function AboutSection() {
       style={{
         display: 'flex',
         alignItems: 'flex-start',
-        minHeight: 'clamp(680px, 92vh, 960px)',
+        minHeight: 'clamp(640px, 88vh, 900px)',
       }}
     >
-      <div className="absolute inset-0 pointer-events-none" style={{ backgroundColor: HANDOFF.mist }}>
-        <div
-          className="absolute inset-x-0 bottom-0 overflow-hidden"
-          style={{ height: '58%', minHeight: '380px' }}
-        >
-          <img
-            src={ABOUT_BG}
-            alt=""
-            aria-hidden="true"
-            className="h-full w-full"
-            style={{ objectFit: 'cover', objectPosition: 'center bottom' }}
-          />
-          <div
-            className="absolute inset-x-0 top-0"
-            style={{
-              height: '48%',
-              background: `linear-gradient(to bottom, ${HANDOFF.mist} 0%, rgba(229,238,244,0.72) 42%, rgba(229,238,244,0) 100%)`,
-            }}
-          />
-        </div>
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Tonal rail: mist (from Solutions) → white (into Contact) */}
+        <div className="absolute inset-0" style={{ background: cssAboutSectionGradient() }} />
+
+        {/* Solar photo — full height, feathered in toward the bottom */}
+        <img
+          src={ABOUT_BG}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full"
+          style={{
+            objectFit: 'cover',
+            objectPosition: 'center bottom',
+            WebkitMaskImage: `linear-gradient(to bottom,
+              transparent 0%,
+              rgba(0,0,0,0.12) 22%,
+              rgba(0,0,0,0.35) 40%,
+              rgba(0,0,0,0.65) 58%,
+              rgba(0,0,0,0.9) 76%,
+              #000 92%)`,
+            maskImage: `linear-gradient(to bottom,
+              transparent 0%,
+              rgba(0,0,0,0.12) 22%,
+              rgba(0,0,0,0.35) 40%,
+              rgba(0,0,0,0.65) 58%,
+              rgba(0,0,0,0.9) 76%,
+              #000 92%)`,
+            WebkitMaskSize: '100% 100%',
+            maskSize: '100% 100%',
+          }}
+        />
+
+        {/* Feather photo into the tonal rail — lighter so glass panels have depth to blur */}
         <div
           className="absolute inset-x-0 top-0"
           style={{
-            height: 'clamp(80px, 14vh, 160px)',
-            background: cssSectionVeilTop(HANDOFF.mist, HANDOFF.mistRgb),
-            zIndex: 1,
+            height: '45%',
+            background: `linear-gradient(to bottom,
+              ${HANDOFF.mist} 0%,
+              rgba(229,238,244,0.72) 22%,
+              rgba(237,243,247,0.32) 42%,
+              rgba(244,249,251,0.08) 58%,
+              transparent 100%)`,
           }}
         />
+        <div className="absolute inset-0" style={{ background: 'rgba(249,251,253,0.03)' }} />
+
+        {/* Soft seam from Solutions above */}
+        <div
+          className="absolute inset-x-0 top-0"
+          style={{
+            height: 'clamp(100px, 16vh, 180px)',
+            background: cssSectionVeilTop(HANDOFF.mist, HANDOFF.mistRgb),
+          }}
+        />
+
+        {/* Dissolve into Contact below */}
         <div
           className="absolute inset-x-0 bottom-0"
           style={{
-            height: 'clamp(72px, 10vh, 120px)',
+            height: 'clamp(120px, 18vh, 220px)',
             background: cssSectionVeilBottom(HANDOFF.paper, HANDOFF.paperRgb),
-            zIndex: 1,
           }}
         />
       </div>
 
-      <div ref={contentRef} className="relative z-10 w-full container pt-16 pb-12 sm:pt-20 sm:pb-16 md:pt-24 md:pb-20">
-        <p
-          className="about-reveal"
-          style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.58rem', letterSpacing: '0.32em', textTransform: 'uppercase', color: '#92a4ac', marginBottom: '14px' }}
-        >
-          03 / About
-        </p>
+      <div ref={contentRef} className="relative isolate z-10 w-full container pt-16 pb-14 sm:pt-20 sm:pb-16 md:pt-24 md:pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-x-14 lg:gap-y-12 items-start">
+          {/* Identity */}
+          <div className="lg:col-span-5 xl:col-span-5">
+            <p
+              className="about-reveal"
+              style={{ ...revealStyle, ...labelStyle, fontSize: '0.58rem', letterSpacing: '0.32em', marginBottom: '14px' }}
+            >
+              03 / About
+            </p>
 
-        <h2
-          className="about-reveal"
-          style={{
-            ...revealStyle,
-            fontFamily: "'Exo 2', sans-serif",
-            fontWeight: 200,
-            fontSize: 'clamp(1.65rem, 3.2vw, 2.5rem)',
-            lineHeight: 1.12,
-            letterSpacing: '0.04em',
-            color: '#1e2830',
-            margin: '0 0 clamp(20px, 3vw, 28px)',
-            maxWidth: '720px',
-          }}
-        >
-          Orbital Labs
-        </h2>
+            <h2
+              className="about-reveal"
+              style={{
+                ...revealStyle,
+                fontFamily: "'Exo 2', sans-serif",
+                fontWeight: 200,
+                fontSize: 'clamp(1.75rem, 3.4vw, 2.75rem)',
+                lineHeight: 1.1,
+                letterSpacing: '0.04em',
+                color: '#1e2830',
+                margin: '0 0 clamp(18px, 3vw, 24px)',
+              }}
+            >
+              Built for teams who run portfolios.
+              <span style={{ color: '#92a4ac' }}> Not the spreadsheets between them.</span>
+            </h2>
 
-        <p
-          className="about-reveal"
-          style={{
-            ...revealStyle,
-            fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: '0.9rem',
-            lineHeight: 1.7,
-            color: '#586879',
-            fontWeight: 300,
-            margin: 0,
-            maxWidth: '680px',
-          }}
-        >
-          Orbital Labs is a European software company focused on the intelligence layer for renewable and hybrid energy portfolios. Our{' '}
-          <strong style={{ fontWeight: 400, color: '#1e2830' }}>vision</strong> is an industry where every asset owner runs on one trusted operating system from origination to exit. Our{' '}
-          <strong style={{ fontWeight: 400, color: '#1e2830' }}>mission</strong> is to replace fragmented tools and re-keying with a single data model — one renewables portfolio OS spanning the lifecycle — and embedded engineers who stay until the manual work is gone.
-        </p>
+            <p
+              className="about-reveal"
+              style={{
+                ...revealStyle,
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: '0.925rem',
+                lineHeight: 1.65,
+                color: '#586879',
+                fontWeight: 300,
+                margin: '0 0 clamp(22px, 3.5vw, 28px)',
+                maxWidth: '420px',
+              }}
+            >
+              Orbital Labs builds the intelligence layer for renewable and hybrid energy portfolios — one operating system from pipeline through operations.
+            </p>
 
+            <p className="about-reveal" style={{ ...revealStyle, ...labelStyle, color: '#586879', margin: 0 }}>
+              {metaTags.join(' · ')}
+            </p>
+          </div>
+
+          {/* Vision + Mission — single glass card (matches ContactEstimate calculator) */}
+          <div
+            className="about-reveal lg:col-span-7 xl:col-span-7"
+            style={{
+              ...glassPanel,
+              ...revealStyle,
+              transitionDelay: '140ms',
+            }}
+          >
+            {pillars.map((pillar, i) => (
+              <div
+                key={pillar.id}
+                style={
+                  i > 0
+                    ? {
+                        marginTop: 'clamp(22px, 3.5vw, 32px)',
+                        paddingTop: 'clamp(22px, 3.5vw, 32px)',
+                        borderTop: '1px solid rgba(88,104,121,0.12)',
+                      }
+                    : undefined
+                }
+              >
+                <p style={pillarLabelStyle}>{pillar.label}</p>
+                <p style={pillarBodyStyle}>{pillar.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Values */}
         <div
-          className="about-reveal mt-10 md:mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8"
-          style={{ ...revealStyle, maxWidth: '820px', borderTop: '1px solid rgba(88,104,121,0.12)', paddingTop: 'clamp(24px, 4vw, 32px)' }}
+          className="about-reveal mt-12 md:mt-16 lg:mt-20"
+          style={{ ...revealStyle, transitionDelay: '280ms' }}
         >
-          {values.map((v) => (
-            <div key={v.label}>
-              <p
-                style={{
-                  fontFamily: "'Space Mono', monospace",
-                  fontSize: '0.52rem',
-                  letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
-                  color: '#92a4ac',
-                  marginBottom: '8px',
-                }}
+          <p style={{ ...labelStyle, marginBottom: 'clamp(16px, 3vw, 24px)' }}>What we stand for</p>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-[rgba(88,104,121,0.16)]"
+          >
+            {values.map((v, i) => (
+              <div
+                key={v.label}
+                className={[
+                  'py-5 sm:py-6',
+                  i > 0 ? 'lg:border-l lg:border-[rgba(88,104,121,0.14)] lg:pl-5' : '',
+                  i === 1 ? 'sm:border-l sm:border-[rgba(88,104,121,0.12)] sm:pl-5' : '',
+                  i >= 2 ? 'border-t border-[rgba(88,104,121,0.12)] sm:border-t-0' : '',
+                  i === 3 ? 'sm:border-l sm:border-[rgba(88,104,121,0.12)] sm:pl-5' : '',
+                ].join(' ')}
               >
-                {v.label}
-              </p>
-              <p
-                style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: '0.78rem',
-                  lineHeight: 1.55,
-                  color: '#586879',
-                  fontWeight: 300,
-                  margin: 0,
-                }}
-              >
-                {v.body}
-              </p>
-            </div>
-          ))}
+                <div className="flex items-baseline gap-3 mb-2.5">
+                  <span style={{ ...labelStyle, color: '#c6d1db', fontSize: '0.48rem' }}>{v.step}</span>
+                  <span
+                    style={{
+                      fontFamily: "'Space Mono', monospace",
+                      fontSize: '0.62rem',
+                      letterSpacing: '0.24em',
+                      textTransform: 'uppercase',
+                      color: '#1e2830',
+                    }}
+                  >
+                    {v.label}
+                  </span>
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: '0.8125rem',
+                    lineHeight: 1.55,
+                    color: '#586879',
+                    fontWeight: 300,
+                    margin: 0,
+                  }}
+                >
+                  {v.body}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

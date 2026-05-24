@@ -84,7 +84,7 @@ const stackProducts = [
     id: 'Tier 1',
     name: 'API',
     tagline: 'For teams that build.',
-    who: 'Larger IPPs with in-house data engineering and existing BI stacks.',
+    who: 'Larger portfolios with in-house data engineering and existing BI stacks.',
     how: 'Build your own UI on our calculation engine and portfolio graph via REST, GraphQL, and events.',
     features: [
       'Full calculation engine access',
@@ -102,7 +102,7 @@ const stackProducts = [
     id: 'Tier 2',
     name: 'Platform',
     tagline: 'For operating teams.',
-    who: 'Mid-market IPPs with established operating teams who want capability without integration projects.',
+    who: 'Operating teams who want full capability without a long integration project.',
     how: 'Log in and run your full portfolio through the renewables OS — pipelines through O&M on shared records.',
     features: [
       'Full web application access',
@@ -120,7 +120,7 @@ const stackProducts = [
     id: 'Tier 3',
     name: 'Embedded',
     tagline: 'Our people, your team.',
-    who: 'IPPs scaling fast without in-house data or transformation capability.',
+    who: 'Organisations scaling fast without in-house data or transformation capacity.',
     how: 'Our engineers embedded with yours — integrations, rollout, modelling, and governance until the model runs without us.',
     features: [
       'Everything in Platform',

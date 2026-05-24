@@ -12,10 +12,6 @@ import {
   SECTION_TONES,
 } from '@shared/hero-about-handoff';
 
-/** Ethereal cloud / fog — matches Platform (#products) for glass panels */
-const PLATFORM_FOG_BG =
-  'https://d2xsxph8kpxj0f.cloudfront.net/310519663126225481/UCizvtKEYs2yVgvvmiwWMw/section-products-fog-ArHtnXcUB5SzEfUrXuYYid.webp';
-
 export default function PlatformArchitectureSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -49,14 +45,6 @@ export default function PlatformArchitectureSection() {
       style={{ background: HANDOFF.cloudBright }}
     >
       <div className="absolute inset-0 pointer-events-none">
-        <img
-          src={PLATFORM_FOG_BG}
-          alt=""
-          aria-hidden="true"
-          className="w-full h-full"
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-        />
-        <div className="absolute inset-0" style={{ background: 'rgba(249,251,253,0.48)' }} />
         <div
           className="absolute top-0 left-0 right-0"
           style={{
@@ -103,18 +91,11 @@ export default function PlatformArchitectureSection() {
             maxWidth: '820px',
           }}
         >
-          One unified operating system{' '}
-          <span style={{ color: '#92a4ac' }}>for the full asset lifecycle</span>
+          From ingestion to output —{' '}
+          <span style={{ color: '#92a4ac' }}>one connected core.</span>
         </h2>
 
-        <div
-          className="glass-panel"
-          style={{
-            marginBottom: 'clamp(28px, 5vw, 40px)',
-            borderRadius: '6px',
-            padding: 'clamp(24px, 4vw, 36px) clamp(20px, 3vw, 32px)',
-          }}
-        >
+        <div style={{ marginBottom: 'clamp(28px, 5vw, 40px)' }}>
           <PlatformArchitectureDiagram />
         </div>
 
