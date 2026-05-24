@@ -172,24 +172,8 @@ export default function AboutSection() {
                 margin: '0 0 clamp(18px, 3vw, 24px)',
               }}
             >
-              Built for teams who run portfolios.
+              One intelligence layer for your portfolio.
             </h2>
-
-            <p
-              className="about-reveal"
-              style={{
-                ...revealStyle,
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: '0.925rem',
-                lineHeight: 1.65,
-                color: '#586879',
-                fontWeight: 300,
-                margin: '0 0 clamp(22px, 3.5vw, 28px)',
-                maxWidth: '420px',
-              }}
-            >
-              One intelligence layer for renewable portfolios — pipeline through operations.
-            </p>
 
             <p className="about-reveal" style={{ ...revealStyle, ...labelStyle, color: '#586879', margin: 0 }}>
               {metaTags.join(' · ')}
