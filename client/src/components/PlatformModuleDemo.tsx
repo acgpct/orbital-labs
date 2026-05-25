@@ -7,7 +7,7 @@ import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import {
   coreModules,
-  PLATFORM_MODULE_DEMO,
+  moduleDemoVideo,
   type CoreModuleId,
   moduleHasDemo,
 } from '@shared/platform-architecture';
@@ -30,6 +30,7 @@ export default function PlatformModuleDemo({ moduleId, variant = 'featured' }: P
   const videoRef = useRef<HTMLVideoElement>(null);
   const isSidebar = variant === 'sidebar';
   const module = moduleHasDemo(moduleId) ? coreModules.find((m) => m.id === moduleId) : undefined;
+  const videoSrc = moduleId && moduleHasDemo(moduleId) ? moduleDemoVideo(moduleId) : undefined;
 
   useEffect(() => {
     if (isSidebar || !module || !sectionRef.current) return;
@@ -38,9 +39,9 @@ export default function PlatformModuleDemo({ moduleId, variant = 'featured' }: P
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || !videoSrc) return;
     void video.play().catch(() => {});
-  }, [moduleId, module, isSidebar]);
+  }, [moduleId, module, isSidebar, videoSrc]);
 
   if (!isSidebar && !module) return null;
 
@@ -113,20 +114,37 @@ export default function PlatformModuleDemo({ moduleId, variant = 'featured' }: P
         className="glass-panel-inset overflow-hidden"
         style={{ borderRadius: '4px', padding: isSidebar ? '6px' : 'clamp(8px, 1.2vw, 10px)' }}
       >
-        <video
-          ref={videoRef}
-          key={moduleId ?? 'idle'}
-          className="block w-full rounded-[2px]"
-          style={videoStyle}
-          src={PLATFORM_MODULE_DEMO}
-          controls
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-label={`${title} demo recording`}
-        />
+        {videoSrc ? (
+          <video
+            ref={videoRef}
+            key={moduleId ?? 'idle'}
+            className="block w-full rounded-[2px]"
+            style={videoStyle}
+            src={videoSrc}
+            controls
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-label={`${title} demo recording`}
+          />
+        ) : (
+          <div
+            className="flex items-center justify-center rounded-[2px]"
+            style={{
+              ...videoStyle,
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: isSidebar ? '0.72rem' : '0.78rem',
+              color: '#687a86',
+              fontWeight: 300,
+              textAlign: 'center',
+              padding: 'clamp(16px, 3vw, 24px)',
+            }}
+          >
+            Select Pipeline &amp; SPV, Development, or Asset Management &amp; O&amp;M to preview a demo.
+          </div>
+        )}
       </div>
     </section>
   );

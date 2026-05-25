@@ -51,11 +51,21 @@ export const coreModules = [
 export type CoreModuleId = (typeof coreModules)[number]['id'];
 
 /** Lifecycle modules with an interactive product demo on the architecture page */
-export const demoModuleIds = ['pipeline-spv', 'development', 'reporting'] as const satisfies readonly CoreModuleId[];
+export const demoModuleIds = ['pipeline-spv', 'development', 'asset-management'] as const satisfies readonly CoreModuleId[];
 
 export type DemoModuleId = (typeof demoModuleIds)[number];
 
 export const PLATFORM_MODULE_DEMO = '/platform-module-demo.mov';
+
+export const moduleDemoVideos = {
+  'pipeline-spv': PLATFORM_MODULE_DEMO,
+  development: PLATFORM_MODULE_DEMO,
+  'asset-management': '/platform-module-demo-asset-management.mov',
+} as const satisfies Record<DemoModuleId, string>;
+
+export function moduleDemoVideo(id: DemoModuleId): string {
+  return moduleDemoVideos[id];
+}
 
 export function moduleHasDemo(id: CoreModuleId | null | undefined): id is DemoModuleId {
   return id != null && (demoModuleIds as readonly string[]).includes(id);
@@ -65,7 +75,7 @@ export function moduleHasDemo(id: CoreModuleId | null | undefined): id is DemoMo
 export const lifecycleRowToCoreId = {
   M1: 'pipeline-spv',
   M2: 'development',
-  M6: 'reporting',
+  M5: 'asset-management',
 } as const satisfies Partial<Record<string, CoreModuleId>>;
 
 export function coreIdFromLifecycleRow(rowId: string): CoreModuleId | null {
