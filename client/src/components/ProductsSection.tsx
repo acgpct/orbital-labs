@@ -55,7 +55,7 @@ const lifecycleCapabilities = [
     title: 'Construction & Commissioning',
     tagline: 'Real-time visibility into build progress.',
     description:
-      'EPC milestones, capex, change orders, commissioning, COD handover — retention and warranty dates flow straight into asset management.',
+      'EPC milestones, capex, change orders, commissioning, COD handover — retention and warranty dates flow straight into asset management & O&M.',
     tags: ['Capex tracking', 'Change orders', 'COD handover', 'Commissioning'],
   },
   {
@@ -65,15 +65,15 @@ const lifecycleCapabilities = [
     title: 'Asset Management & O&M',
     tagline: 'The runtime layer for producing assets.',
     description:
-      'Mixed-OEM monitoring, variance investigation, settlement reconciliation, work orders, BESS dispatch — fleet-scale telemetry and workflows on one model; often the natural entry surface.',
-    tags: ['Performance monitoring', 'Variance detection', 'Settlement reconciliation', 'Work orders'],
+      'Asset management and O&M on one model — mixed-OEM monitoring, variance investigation, settlement reconciliation, work orders, BESS dispatch; fleet-scale telemetry and workflows; often the natural entry surface.',
+    tags: ['Asset Management & O&M', 'Performance monitoring', 'Variance detection', 'Work orders'],
   },
   {
     id: 'M6',
     step: '06',
     phase: 'Report & recycle',
     title: 'Reporting & disclosures',
-    tagline: 'Lender and investor-ready packs — fast.',
+    tagline: 'Lender and investor-ready packs.',
     description:
       'Lender, investor, and board packs; CSRD; transaction and diligence rooms — same core data for quarterly operations and strategic events.',
     tags: ['Lender packs', 'CSRD reporting', 'Board & investor decks', 'Diligence rooms'],
@@ -269,7 +269,7 @@ export default function ProductsSection() {
               fontSize: '0.58rem',
               letterSpacing: '0.32em',
               textTransform: 'uppercase',
-              color: '#92a4ac',
+              color: '#414d56',
               marginBottom: '12px',
             }}
           >
@@ -302,7 +302,7 @@ export default function ProductsSection() {
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: '0.875rem',
                 lineHeight: 1.55,
-                color: '#586879',
+                color: '#414d56',
                 fontWeight: 300,
                 margin: 0,
               }}
@@ -326,7 +326,7 @@ export default function ProductsSection() {
                 fontSize: '0.55rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: platformTab === 'modules' ? '#1e2830' : '#92a4ac',
+                color: platformTab === 'modules' ? '#1e2830' : '#687a86',
                 borderBottom: platformTab === 'modules' ? '1px solid #1e2830' : '1px solid transparent',
               }}
             >
@@ -344,7 +344,7 @@ export default function ProductsSection() {
                 fontSize: '0.55rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: platformTab === 'stack' ? '#1e2830' : '#92a4ac',
+                color: platformTab === 'stack' ? '#1e2830' : '#687a86',
                 borderBottom: platformTab === 'stack' ? '1px solid #1e2830' : '1px solid transparent',
               }}
             >
@@ -380,7 +380,7 @@ export default function ProductsSection() {
                       fontSize: '0.52rem',
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',
-                      color: '#c6d1db',
+                      color: '#687a86',
                     }}
                   >
                     {tier.id}
@@ -392,7 +392,7 @@ export default function ProductsSection() {
                         fontSize: '0.48rem',
                         letterSpacing: '0.18em',
                         textTransform: 'uppercase',
-                        color: '#586879',
+                        color: '#414d56',
                         border: '1px solid rgba(255, 255, 255, 0.55)',
                         background: 'rgba(255, 255, 255, 0.32)',
                         backdropFilter: 'blur(8px)',
@@ -421,7 +421,7 @@ export default function ProductsSection() {
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontSize: '0.82rem',
-                    color: '#92a4ac',
+                    color: '#414d56',
                     margin: '0 0 28px',
                     fontWeight: 300,
                   }}
@@ -435,7 +435,7 @@ export default function ProductsSection() {
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontSize: '0.8rem',
-                    color: '#586879',
+                    color: '#414d56',
                     lineHeight: 1.7,
                     fontWeight: 300,
                     marginBottom: '12px',
@@ -447,7 +447,7 @@ export default function ProductsSection() {
                   style={{
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontSize: '0.8rem',
-                    color: '#586879',
+                    color: '#414d56',
                     lineHeight: 1.7,
                     fontWeight: 300,
                     marginBottom: '20px',
@@ -476,7 +476,7 @@ export default function ProductsSection() {
                         style={{
                           fontFamily: "'Space Grotesk', sans-serif",
                           fontSize: '0.8rem',
-                          color: '#586879',
+                          color: '#414d56',
                           fontWeight: 300,
                           lineHeight: 1.5,
                         }}
@@ -573,7 +573,7 @@ export default function ProductsSection() {
                       fontFamily: "'Space Mono', monospace",
                       fontSize: '0.58rem',
                       letterSpacing: '0.2em',
-                      color: activeModuleRow === i ? '#1e2830' : '#c6d1db',
+                      color: activeModuleRow === i ? '#1e2830' : '#687a86',
                       transition: 'color 0.25s ease',
                     }}
                   >
@@ -585,7 +585,7 @@ export default function ProductsSection() {
                       fontSize: '0.46rem',
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',
-                      color: activeModuleRow === i ? '#586879' : '#92a4ac',
+                      color: activeModuleRow === i ? '#414d56' : '#687a86',
                       lineHeight: 1.35,
                       transition: 'color 0.25s ease',
                     }}
@@ -611,7 +611,7 @@ export default function ProductsSection() {
                     style={{
                       fontFamily: "'Space Grotesk', sans-serif",
                       fontSize: '0.8rem',
-                      color: '#92a4ac',
+                      color: '#414d56',
                       margin: '4px 0 0',
                       fontWeight: 300,
                     }}
@@ -627,7 +627,7 @@ export default function ProductsSection() {
                   style={{
                     transform: activeModuleRow === i ? 'rotate(45deg)' : 'rotate(0deg)',
                     transition: 'transform 0.3s cubic-bezier(0.23,1,0.32,1)',
-                    color: '#92a4ac',
+                    color: '#414d56',
                   }}
                   aria-hidden
                 >
@@ -659,7 +659,7 @@ export default function ProductsSection() {
                       fontFamily: "'Space Grotesk', sans-serif",
                       fontSize: '0.82rem',
                       lineHeight: 1.55,
-                      color: '#586879',
+                      color: '#414d56',
                       fontWeight: 300,
                       marginBottom: '12px',
                     }}
@@ -675,7 +675,7 @@ export default function ProductsSection() {
                           fontSize: '0.52rem',
                           letterSpacing: '0.15em',
                           textTransform: 'uppercase',
-                          color: '#92a4ac',
+                          color: '#414d56',
                           border: '1px solid rgba(88,104,121,0.2)',
                           padding: '5px 10px',
                         }}
@@ -728,7 +728,7 @@ export default function ProductsSection() {
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: '0.78rem',
               letterSpacing: '0.1em',
-              color: '#92a4ac',
+              color: '#414d56',
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
@@ -739,7 +739,7 @@ export default function ProductsSection() {
               (e.currentTarget as HTMLElement).style.color = '#1e2830';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.color = '#92a4ac';
+              (e.currentTarget as HTMLElement).style.color = '#414d56';
             }}
           >
             Industry &amp; buyers

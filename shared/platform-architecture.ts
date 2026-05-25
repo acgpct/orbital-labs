@@ -33,12 +33,13 @@ export const coreModules = [
   {
     id: 'construction',
     title: 'Construction',
-    summary: 'EPC milestones, capex, change orders, commissioning checklists, and COD handover with warranty dates flowing forward.',
+    summary: 'EPC milestones, capex, change orders, commissioning checklists, and COD handover with warranty dates flowing into asset management & O&M.',
   },
   {
     id: 'asset-management',
-    title: 'Asset Management',
-    summary: 'Mixed-OEM monitoring, variance investigation, settlement reconciliation, work orders, and BESS dispatch at fleet scale.',
+    title: 'Asset Management & O&M',
+    summary:
+      'Asset management and operations & maintenance at fleet scale — mixed-OEM monitoring, variance investigation, settlement reconciliation, work orders, and BESS dispatch.',
   },
   {
     id: 'reporting',

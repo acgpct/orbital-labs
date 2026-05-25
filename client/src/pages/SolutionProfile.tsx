@@ -18,7 +18,7 @@ const linkMutedStyle: CSSProperties = {
   fontFamily: "'Space Grotesk', sans-serif",
   fontSize: '0.78rem',
   letterSpacing: '0.08em',
-  color: '#92a4ac',
+  color: '#414d56',
   textDecoration: 'none',
   display: 'inline-flex',
   alignItems: 'center',
@@ -50,7 +50,7 @@ export default function SolutionProfilePage() {
             (e.currentTarget as HTMLElement).style.color = '#1e2830';
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.color = '#92a4ac';
+            (e.currentTarget as HTMLElement).style.color = '#414d56';
           }}
         >
           <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden style={{ transform: 'rotate(180deg)' }}>
@@ -65,7 +65,7 @@ export default function SolutionProfilePage() {
             fontSize: '0.58rem',
             letterSpacing: '0.32em',
             textTransform: 'uppercase',
-            color: '#92a4ac',
+            color: '#414d56',
             marginBottom: '16px',
           }}
         >
@@ -92,7 +92,7 @@ export default function SolutionProfilePage() {
             fontFamily: "'Space Grotesk', sans-serif",
             fontSize: '0.95rem',
             lineHeight: 1.65,
-            color: '#586879',
+            color: '#414d56',
             fontWeight: 300,
             maxWidth: '720px',
             margin: '0 0 clamp(36px, 5vw, 52px)',
@@ -106,7 +106,7 @@ export default function SolutionProfilePage() {
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: '0.88rem',
-              color: '#586879',
+              color: '#414d56',
               lineHeight: 1.6,
               padding: '20px 22px',
               background: '#f9fbfd',
@@ -119,7 +119,7 @@ export default function SolutionProfilePage() {
                 fontSize: '0.5rem',
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: '#92a4ac',
+                color: '#414d56',
                 display: 'block',
                 marginBottom: '8px',
               }}
@@ -142,7 +142,7 @@ export default function SolutionProfilePage() {
                     fontSize: '0.5rem',
                     letterSpacing: '0.2em',
                     textTransform: 'uppercase',
-                    color: '#c6d1db',
+                    color: '#687a86',
                     marginBottom: '6px',
                   }}
                 >
@@ -172,7 +172,7 @@ export default function SolutionProfilePage() {
               fontSize: '0.52rem',
               letterSpacing: '0.25em',
               textTransform: 'uppercase',
-              color: '#c6d1db',
+              color: '#687a86',
               marginBottom: '20px',
             }}
           >
@@ -186,7 +186,7 @@ export default function SolutionProfilePage() {
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: '0.9rem',
                   lineHeight: 1.65,
-                  color: '#586879',
+                  color: '#414d56',
                   fontWeight: 300,
                   padding: '18px 0',
                   borderBottom: '1px solid rgba(88,104,121,0.08)',
@@ -246,7 +246,7 @@ export default function SolutionProfilePage() {
               (e.currentTarget as HTMLElement).style.color = '#1e2830';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.color = '#92a4ac';
+              (e.currentTarget as HTMLElement).style.color = '#414d56';
             }}
           >
             View platform &amp; lifecycle
@@ -263,7 +263,7 @@ export default function SolutionProfilePage() {
               fontSize: '0.52rem',
               letterSpacing: '0.25em',
               textTransform: 'uppercase',
-              color: '#c6d1db',
+              color: '#687a86',
               marginBottom: '20px',
             }}
           >
@@ -277,7 +277,7 @@ export default function SolutionProfilePage() {
                 style={{
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: '0.82rem',
-                  color: '#586879',
+                  color: '#414d56',
                   textDecoration: 'none',
                   padding: '16px 18px',
                   border: '1px solid rgba(88,104,121,0.12)',
@@ -291,7 +291,7 @@ export default function SolutionProfilePage() {
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.borderColor = 'rgba(88,104,121,0.12)';
-                  (e.currentTarget as HTMLElement).style.color = '#586879';
+                  (e.currentTarget as HTMLElement).style.color = '#414d56';
                 }}
               >
                 {other.shortLabel}

@@ -8,7 +8,7 @@ import { Link } from 'wouter';
 import { solutionProfiles, solutionProfilePath } from '@shared/solution-profiles';
 import { homeSection, navigateToHomeSection } from '@shared/site-nav';
 
-const labelStyle = "block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.28em] uppercase text-[#92a4ac] mb-3";
+const labelStyle = "block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.28em] uppercase text-[#586879] mb-3";
 const linkStyle =
   "block font-['Space_Grotesk',sans-serif] text-[0.82rem] text-[#1e2830] py-1.5 hover:text-[#586879] transition-colors";
 

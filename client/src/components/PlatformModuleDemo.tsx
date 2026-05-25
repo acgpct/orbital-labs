@@ -17,7 +17,7 @@ const labelStyle: CSSProperties = {
   fontSize: '0.52rem',
   letterSpacing: '0.28em',
   textTransform: 'uppercase',
-  color: '#92a4ac',
+  color: '#414d56',
 };
 
 type Props = {
@@ -46,7 +46,7 @@ export default function PlatformModuleDemo({ moduleId, variant = 'featured' }: P
 
   const title = module?.title ?? 'Platform walkthrough';
   const summary = module?.summary
-    ?? 'Hover or select Pipeline & SPV, Development, or Reporting to preview the module.';
+    ?? 'Hover or select a module to preview the walkthrough.';
 
   const shellStyle: CSSProperties = isSidebar
     ? {
@@ -100,7 +100,7 @@ export default function PlatformModuleDemo({ moduleId, variant = 'featured' }: P
             fontFamily: "'Space Grotesk', sans-serif",
             fontSize: isSidebar ? '0.74rem' : '0.78rem',
             lineHeight: 1.55,
-            color: '#586879',
+            color: '#414d56',
             fontWeight: 300,
             margin: 0,
           }}

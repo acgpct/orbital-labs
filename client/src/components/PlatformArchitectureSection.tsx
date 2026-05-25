@@ -70,7 +70,7 @@ export default function PlatformArchitectureSection() {
             fontSize: '0.58rem',
             letterSpacing: '0.32em',
             textTransform: 'uppercase',
-            color: '#92a4ac',
+            color: '#414d56',
             marginBottom: '16px',
           }}
         >
@@ -91,7 +91,7 @@ export default function PlatformArchitectureSection() {
           }}
         >
           From ingestion to output —{' '}
-          <span style={{ color: '#92a4ac' }}>one connected core.</span>
+          <span style={{ color: '#586879' }}>one connected core.</span>
         </h2>
 
         <div className="arch-reveal" style={{ ...revealStyle, marginBottom: 'clamp(28px, 5vw, 40px)' }}>
@@ -138,7 +138,7 @@ export default function PlatformArchitectureSection() {
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: '0.78rem',
               letterSpacing: '0.1em',
-              color: '#92a4ac',
+              color: '#414d56',
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
@@ -149,7 +149,7 @@ export default function PlatformArchitectureSection() {
               (e.currentTarget as HTMLElement).style.color = '#1e2830';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.color = '#92a4ac';
+              (e.currentTarget as HTMLElement).style.color = '#414d56';
             }}
           >
             Industry &amp; buyers

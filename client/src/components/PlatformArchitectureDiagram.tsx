@@ -55,7 +55,7 @@ function SideColumn({
   align: 'left' | 'right';
 }) {
   return (
-    <div className="glass-panel flex flex-col" style={columnShellStyle}>
+    <div className="glass-panel arch-diagram-panel flex flex-col" style={columnShellStyle}>
       <p style={columnLabelStyle}>{label}</p>
       <div className="flex flex-col gap-2.5 flex-1 justify-center">
         {items.map((item) => (
@@ -63,17 +63,17 @@ function SideColumn({
             {align === 'left' && (
               <div
                 aria-hidden
-                className="hidden lg:block absolute left-full top-1/2 h-px bg-[rgba(255,255,255,0.55)]"
+                className="hidden lg:block absolute left-full top-1/2 h-px bg-[rgba(255,255,255,0.62)]"
                 style={{ width: 'clamp(12px, 2vw, 28px)', transform: 'translateY(-50%)' }}
               />
             )}
-            <div className="glass-panel-inset w-full" style={sideItemStyle}>
+            <div className="glass-panel-inset arch-diagram-cell w-full" style={sideItemStyle}>
               {item}
             </div>
             {align === 'right' && (
               <div
                 aria-hidden
-                className="hidden lg:block absolute right-full top-1/2 h-px bg-[rgba(255,255,255,0.55)]"
+                className="hidden lg:block absolute right-full top-1/2 h-px bg-[rgba(255,255,255,0.62)]"
                 style={{ width: 'clamp(12px, 2vw, 28px)', transform: 'translateY(-50%)' }}
               />
             )}
@@ -107,7 +107,7 @@ export default function PlatformArchitectureDiagram({
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.55fr)_minmax(0,1fr)] gap-4 lg:gap-5 xl:gap-6 items-stretch">
         <SideColumn label="Data ingestion" items={dataIngestion} align="left" />
 
-        <div className="glass-panel order-first lg:order-none flex flex-col" style={columnShellStyle}>
+        <div className="glass-panel arch-diagram-panel order-first lg:order-none flex flex-col" style={columnShellStyle}>
           <p
             style={{
               ...columnLabelStyle,
@@ -118,7 +118,7 @@ export default function PlatformArchitectureDiagram({
             Orbital core platform
           </p>
 
-          <div className="platform-core-frame glass-panel-inset flex-1">
+          <div className="platform-core-frame glass-panel-inset arch-diagram-core flex-1">
             <svg
               className="platform-core-border-trace"
               viewBox="0 0 100 100"
@@ -128,13 +128,14 @@ export default function PlatformArchitectureDiagram({
               <defs>
                 <linearGradient id={borderGradId} gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="100" y2="0">
                   <stop offset="0%" stopColor="rgba(249, 251, 253, 0)" />
-                  <stop offset="38%" stopColor="rgba(198, 209, 219, 0.35)" />
-                  <stop offset="50%" stopColor="rgba(249, 251, 253, 1)" />
-                  <stop offset="62%" stopColor="rgba(198, 209, 219, 0.9)" />
+                  <stop offset="34%" stopColor="rgba(198, 209, 219, 0.42)" />
+                  <stop offset="48%" stopColor="rgba(255, 255, 255, 0.92)" />
+                  <stop offset="50%" stopColor="rgba(255, 255, 255, 1)" />
+                  <stop offset="64%" stopColor="rgba(168, 181, 193, 0.78)" />
                   <stop offset="100%" stopColor="rgba(249, 251, 253, 0)" />
                 </linearGradient>
                 <filter id={borderGlowId} x="-80%" y="-80%" width="260%" height="260%">
-                  <feGaussianBlur stdDeviation="2.2" result="blur" />
+                  <feGaussianBlur stdDeviation="2.4" result="blur" />
                   <feMerge>
                     <feMergeNode in="blur" />
                     <feMergeNode in="SourceGraphic" />
@@ -184,7 +185,7 @@ export default function PlatformArchitectureDiagram({
                       type="button"
                       disabled={!interactive}
                       onClick={() => handleSelect(mod.id)}
-                      className={`text-left ${selected ? 'glass-panel' : 'glass-panel-inset'}`}
+                      className={`text-left arch-diagram-module ${selected ? 'arch-diagram-module-selected' : ''}`}
                       style={{
                         cursor: interactive ? 'pointer' : 'default',
                         borderRadius: '4px',
@@ -217,7 +218,7 @@ export default function PlatformArchitectureDiagram({
               fontSize: '0.44rem',
               letterSpacing: '0.22em',
               textTransform: 'uppercase',
-              color: '#92a4ac',
+              color: '#414d56',
               textAlign: 'center',
               marginTop: '14px',
               marginBottom: 0,
@@ -232,7 +233,7 @@ export default function PlatformArchitectureDiagram({
 
       {activeModule && (
         <div
-          className="glass-panel mt-5 max-w-3xl mx-auto lg:mx-0"
+          className="glass-panel arch-diagram-panel mt-5 max-w-3xl mx-auto lg:mx-0"
           style={{
             borderRadius: '4px',
             padding: 'clamp(16px, 2.5vw, 20px) clamp(18px, 3vw, 24px)',

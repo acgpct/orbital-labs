@@ -81,11 +81,11 @@ export default function ProcessSection() {
             }}
           >
             How we build<br />
-            <span style={{ color: '#92a4ac' }}>intelligence.</span>
+            <span style={{ color: '#586879' }}>intelligence.</span>
           </h2>
           <p
             className="reveal-up font-inter text-base leading-loose self-end"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#586879', fontWeight: 400, lineHeight: 1.8 }}
+            style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#414d56', fontWeight: 400, lineHeight: 1.8 }}
           >
             Every engagement follows a rigorous four-phase methodology —
             designed to minimize uncertainty and maximize the reliability of
@@ -119,7 +119,7 @@ export default function ProcessSection() {
                 {/* Number */}
                 <div
                   className="font-mono-space text-xs tracking-widest"
-                  style={{ color: '#92a4ac' }}
+                  style={{ color: '#414d56' }}
                 >
                   {step.number}
                 </div>
@@ -141,7 +141,7 @@ export default function ProcessSection() {
                 {/* Description */}
                 <p
                   className="font-inter text-sm leading-relaxed"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#586879', fontWeight: 400, lineHeight: 1.7 }}
+                  style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#414d56', fontWeight: 400, lineHeight: 1.7 }}
                 >
                   {step.description}
                 </p>

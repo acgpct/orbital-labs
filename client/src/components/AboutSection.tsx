@@ -11,7 +11,7 @@ import {
   HANDOFF,
 } from '@shared/hero-about-handoff';
 
-const ABOUT_PROMO = '/orbital-labs-promo-v7.mp4';
+const ABOUT_PROMO = '/orbital-labs-promo-about.mp4?v=8';
 
 const metaTags = ['Renewable energy', 'Full lifecycle', 'Portfolio OS'];
 
@@ -40,7 +40,7 @@ const labelStyle: CSSProperties = {
   fontSize: '0.52rem',
   letterSpacing: '0.22em',
   textTransform: 'uppercase',
-  color: '#92a4ac',
+  color: '#414d56',
 };
 
 /** Matches ContactEstimate calculator card */
@@ -60,7 +60,7 @@ const pillarLabelStyle: CSSProperties = {
   fontSize: '0.58rem',
   letterSpacing: '0.3em',
   textTransform: 'uppercase',
-  color: 'rgba(88,104,121,0.85)',
+  color: 'rgba(88,104,121,0.95)',
   marginBottom: '12px',
 };
 
@@ -97,6 +97,7 @@ export default function AboutSection() {
   useEffect(() => {
     const video = promoVideoRef.current;
     if (!video) return;
+    video.load();
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
         void video.play().catch(() => {});
@@ -175,7 +176,7 @@ export default function AboutSection() {
               One intelligence layer for your portfolio.
             </h2>
 
-            <p className="about-reveal" style={{ ...revealStyle, ...labelStyle, color: '#586879', margin: 0 }}>
+            <p className="about-reveal" style={{ ...revealStyle, ...labelStyle, color: '#414d56', margin: 0 }}>
               {metaTags.join(' · ')}
             </p>
           </div>
@@ -222,6 +223,7 @@ export default function AboutSection() {
             }}
           >
             <video
+              key={ABOUT_PROMO}
               ref={promoVideoRef}
               className="block w-full aspect-video rounded-[2px]"
               style={{ background: '#1e2830' }}
@@ -258,7 +260,7 @@ export default function AboutSection() {
                 ].join(' ')}
               >
                 <div className="flex items-baseline gap-3 mb-2.5">
-                  <span style={{ ...labelStyle, color: '#c6d1db', fontSize: '0.48rem' }}>{v.step}</span>
+                  <span style={{ ...labelStyle, color: '#687a86', fontSize: '0.48rem' }}>{v.step}</span>
                   <span
                     style={{
                       fontFamily: "'Space Mono', monospace",
@@ -276,7 +278,7 @@ export default function AboutSection() {
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontSize: '0.8125rem',
                     lineHeight: 1.55,
-                    color: '#586879',
+                    color: '#414d56',
                     fontWeight: 300,
                     margin: 0,
                   }}

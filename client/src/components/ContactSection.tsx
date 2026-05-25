@@ -50,7 +50,7 @@ export default function ContactSection() {
     fontSize: '0.52rem',
     letterSpacing: '0.22em',
     textTransform: 'uppercase' as const,
-    color: '#92a4ac',
+    color: '#414d56',
     display: 'block',
     marginBottom: '8px',
   };
@@ -73,7 +73,7 @@ export default function ContactSection() {
                   fontSize: '0.58rem',
                   letterSpacing: '0.32em',
                   textTransform: 'uppercase',
-                  color: '#92a4ac',
+                  color: '#414d56',
                   marginBottom: '14px',
                 }}
               >
@@ -98,7 +98,7 @@ export default function ContactSection() {
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: '0.875rem',
                   lineHeight: 1.55,
-                  color: '#586879',
+                  color: '#414d56',
                   fontWeight: 300,
                   marginBottom: '36px',
                 }}
@@ -112,7 +112,7 @@ export default function ContactSection() {
                     fontSize: '0.52rem',
                     letterSpacing: '0.22em',
                     textTransform: 'uppercase',
-                    color: '#c6d1db',
+                    color: '#687a86',
                     marginBottom: '6px',
                   }}
                 >
@@ -124,7 +124,7 @@ export default function ContactSection() {
                     fontWeight: 300,
                     fontSize: '0.95rem',
                     letterSpacing: '0.04em',
-                    color: '#586879',
+                    color: '#414d56',
                     margin: 0,
                   }}
                 >
@@ -141,14 +141,14 @@ export default function ContactSection() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginTop: '24px',
-                  color: '#92a4ac',
+                  color: '#414d56',
                   transition: 'color 0.25s ease',
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.color = '#1e2830';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = '#92a4ac';
+                  (e.currentTarget as HTMLElement).style.color = '#414d56';
                 }}
               >
                 <LinkedInIcon size={22} />
@@ -164,7 +164,7 @@ export default function ContactSection() {
                       fontSize: '0.58rem',
                       letterSpacing: '0.3em',
                       textTransform: 'uppercase',
-                      color: '#92a4ac',
+                      color: '#414d56',
                       marginBottom: '16px',
                     }}
                   >
@@ -182,7 +182,7 @@ export default function ContactSection() {
                   >
                     Thank you.
                   </h3>
-                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.85rem', color: '#92a4ac', lineHeight: 1.7 }}>
+                  <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.85rem', color: '#414d56', lineHeight: 1.7 }}>
                     We'll be in touch within 24 hours.
                   </p>
                 </div>
@@ -232,7 +232,7 @@ export default function ContactSection() {
                       style={{
                         ...inputStyle,
                         cursor: 'pointer',
-                        color: form.tier ? '#1e2830' : '#c6d1db',
+                        color: form.tier ? '#1e2830' : '#687a86',
                       }}
                       value={form.tier}
                       onChange={(e) => setForm({ ...form, tier: e.target.value })}
@@ -293,7 +293,7 @@ export default function ContactSection() {
             >
               Orbital Labs
             </span>
-            <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.14em', color: '#92a4ac' }}>
+            <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.14em', color: '#414d56' }}>
               © 2026 Orbital Labs. All rights reserved.
             </span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
@@ -306,12 +306,12 @@ export default function ContactSection() {
                     fontSize: '0.52rem',
                     letterSpacing: '0.14em',
                     textTransform: 'uppercase',
-                    color: '#92a4ac',
+                    color: '#414d56',
                     textDecoration: 'none',
                     transition: 'color 0.2s ease',
                   }}
                   onMouseEnter={(e) => ((e.target as HTMLElement).style.color = '#1e2830')}
-                  onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#92a4ac')}
+                  onMouseLeave={(e) => ((e.target as HTMLElement).style.color = '#414d56')}
                 >
                   {link}
                 </a>
@@ -323,14 +323,14 @@ export default function ContactSection() {
                 aria-label="Orbital Labs on LinkedIn"
                 style={{
                   display: 'inline-flex',
-                  color: '#92a4ac',
+                  color: '#414d56',
                   transition: 'color 0.2s ease',
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.color = '#1e2830';
                 }}
                 onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = '#92a4ac';
+                  (e.currentTarget as HTMLElement).style.color = '#414d56';
                 }}
               >
                 <LinkedInIcon size={18} />
@@ -342,7 +342,7 @@ export default function ContactSection() {
 
       <style>{`
         #contact-form input::placeholder {
-          color: #c6d1db;
+          color: #687a86;
           opacity: 1;
         }
         #contact-form select {

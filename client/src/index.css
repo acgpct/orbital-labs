@@ -56,7 +56,11 @@
   --secondary: #c6d1db;
   --secondary-foreground: #1e2830;
   --muted: #edf1f4;
-  --muted-foreground: #92a4ac;
+  --muted-foreground: #586879;
+  --text-primary: #1e2830;
+  --text-body: #414d56;
+  --text-muted: #586879;
+  --text-subtle: #687a86;
   --accent: #92a4ac;
   --accent-foreground: #f9fbfd;
   --destructive: oklch(0.577 0.245 27.325);
@@ -372,11 +376,79 @@
     background-clip: text;
   }
 
+  /* Platform architecture diagram — frosted glass columns & cells */
+  .arch-diagram-panel {
+    background: linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.54) 0%,
+      rgba(255, 255, 255, 0.22) 46%,
+      rgba(249, 251, 253, 0.14) 100%
+    );
+    backdrop-filter: blur(40px) saturate(170%);
+    -webkit-backdrop-filter: blur(40px) saturate(170%);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.88),
+      0 10px 36px rgba(30, 40, 48, 0.045);
+  }
+
+  .arch-diagram-cell {
+    background: linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.6) 0%,
+      rgba(255, 255, 255, 0.26) 52%,
+      rgba(249, 251, 253, 0.16) 100%
+    );
+    backdrop-filter: blur(22px) saturate(165%);
+    -webkit-backdrop-filter: blur(22px) saturate(165%);
+    border: 1px solid rgba(255, 255, 255, 0.66);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58);
+  }
+
+  .arch-diagram-core {
+    background: linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.64) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(249, 251, 253, 0.18) 100%
+    );
+    backdrop-filter: blur(30px) saturate(168%);
+    -webkit-backdrop-filter: blur(30px) saturate(168%);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  }
+
+  .arch-diagram-module {
+    background: linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.56) 0%,
+      rgba(255, 255, 255, 0.22) 50%,
+      rgba(249, 251, 253, 0.14) 100%
+    );
+    backdrop-filter: blur(18px) saturate(162%);
+    -webkit-backdrop-filter: blur(18px) saturate(162%);
+    border: 1px solid rgba(255, 255, 255, 0.58);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .arch-diagram-module-selected {
+    background: linear-gradient(
+      158deg,
+      rgba(255, 255, 255, 0.72) 0%,
+      rgba(255, 255, 255, 0.38) 48%,
+      rgba(249, 251, 253, 0.22) 100%
+    );
+    border-color: rgba(255, 255, 255, 0.82);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.92),
+      0 4px 18px rgba(30, 40, 48, 0.05);
+  }
+
   /* Orbital core platform — border trace highlight */
   .platform-core-frame {
     position: relative;
     border-radius: 11px;
-    border-color: rgba(255, 255, 255, 0.38);
+    border-color: rgba(255, 255, 255, 0.52);
     isolation: isolate;
   }
 
@@ -391,17 +463,17 @@
   }
 
   .platform-core-border-glow {
-    stroke-width: 3.5;
+    stroke-width: 3.25;
     stroke-linecap: round;
     stroke-dasharray: 14 86;
-    opacity: 0.55;
+    opacity: 0.58;
     animation:
       platform-core-border-run 5.5s linear infinite,
       platform-core-border-pulse 2.4s ease-in-out infinite;
   }
 
   .platform-core-border-stroke {
-    stroke-width: 1.75;
+    stroke-width: 1.65;
     stroke-linecap: round;
     stroke-dasharray: 14 86;
     animation:
@@ -421,8 +493,8 @@
   }
 
   @keyframes platform-core-border-pulse {
-    0%, 100% { opacity: 0.35; }
-    50% { opacity: 1; }
+    0%, 100% { opacity: 0.38; }
+    50% { opacity: 0.82; }
   }
 
   @media (prefers-reduced-motion: reduce) {

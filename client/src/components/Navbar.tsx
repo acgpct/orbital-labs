@@ -24,7 +24,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navMuted = scrolled ? '#586879' : 'rgba(198,209,219,0.85)';
+  const navMuted = scrolled ? '#414d56' : 'rgba(249,251,253,0.88)';
   const navLogo = scrolled ? '#1e2830' : '#ffffff';
 
   const clearCloseTimer = () => {

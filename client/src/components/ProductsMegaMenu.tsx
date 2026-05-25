@@ -8,11 +8,11 @@ import { Link } from 'wouter';
 import { homeSection, navigateToHomeSection } from '@shared/site-nav';
 
 const labelStyle =
-  "block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.28em] uppercase text-[#92a4ac] mb-3";
+  "block font-['Space_Mono',monospace] text-[0.52rem] tracking-[0.28em] uppercase text-[#586879] mb-3";
 const linkStyle =
   "block font-['Space_Grotesk',sans-serif] text-[0.82rem] text-[#1e2830] py-1.5 hover:text-[#586879] transition-colors";
 const typeStyle =
-  "font-['Space_Mono',monospace] text-[0.5rem] tracking-[0.14em] uppercase text-[#c6d1db]";
+  "font-['Space_Mono',monospace] text-[0.5rem] tracking-[0.14em] uppercase text-[#687a86]";
 
 const stackItems = [
   { href: homeSection('#product-api'), name: 'API', type: 'Integrate' },
@@ -25,7 +25,7 @@ const lifecycleItems = [
   { href: homeSection('#module-m2'), name: 'Development', id: 'M2' },
   { href: homeSection('#module-m3'), name: 'Contracts', id: 'M3' },
   { href: homeSection('#module-m4'), name: 'Construction & commissioning', id: 'M4' },
-  { href: homeSection('#module-m5'), name: 'Asset management & O&M', id: 'M5' },
+  { href: homeSection('#module-m5'), name: 'Asset Management & O&M', id: 'M5' },
   { href: homeSection('#module-m6'), name: 'Reporting & disclosures', id: 'M6' },
 ] as const;
 

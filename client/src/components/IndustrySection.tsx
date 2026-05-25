@@ -102,7 +102,7 @@ export default function IndustrySection() {
       <div ref={contentRef} className="relative z-10 w-full container pt-16 pb-12 sm:pt-20 sm:pb-16 md:pt-24 md:pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           <div className="lg:col-span-6 xl:col-span-7">
-            <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.58rem', letterSpacing: '0.32em', textTransform: 'uppercase', color: '#92a4ac', marginBottom: '12px' }}>
+            <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.58rem', letterSpacing: '0.32em', textTransform: 'uppercase', color: '#414d56', marginBottom: '12px' }}>
               02 / Solutions — Energy
             </p>
             <h2 className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Exo 2', sans-serif", fontWeight: 200, fontSize: 'clamp(1.65rem, 3.2vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '0.04em', color: '#1e2830', margin: '0 0 clamp(24px, 4vw, 36px)' }}>
@@ -114,17 +114,17 @@ export default function IndustrySection() {
               className="scroll-mt-28 ind-reveal flex flex-wrap items-baseline gap-x-5 gap-y-2"
               style={{ ...revealStyle, marginBottom: 'clamp(28px, 5vw, 40px)' }}
             >
-              <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#92a4ac' }}>
+              <span style={{ fontFamily: "'Space Mono', monospace", fontSize: '0.52rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#414d56' }}>
                 Industry · Renewable energy
               </span>
-              <span aria-hidden="true" style={{ color: '#c6d1db', fontSize: '0.52rem' }}>·</span>
-              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.875rem', lineHeight: 1.55, color: '#586879', fontWeight: 300, margin: 0 }}>
+              <span aria-hidden="true" style={{ color: '#687a86', fontSize: '0.52rem' }}>·</span>
+              <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.875rem', lineHeight: 1.55, color: '#414d56', fontWeight: 300, margin: 0 }}>
                 Solar, onshore wind, storage, and hybrids.
               </p>
             </div>
 
-            <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#92a4ac' }}>
-              <a href="#products" style={{ color: '#586879', textDecoration: 'none', borderBottom: '1px solid rgba(88,104,121,0.25)' }} className="hover:text-[#1e2830]">
+            <p className="ind-reveal" style={{ ...revealStyle, fontFamily: "'Space Mono', monospace", fontSize: '0.55rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#414d56' }}>
+              <a href="#products" style={{ color: '#414d56', textDecoration: 'none', borderBottom: '1px solid rgba(88,104,121,0.25)' }} className="hover:text-[#1e2830]">
                 Platform &amp; lifecycle →
               </a>
             </p>
@@ -143,7 +143,7 @@ export default function IndustrySection() {
                 fontSize: '0.52rem',
                 letterSpacing: '0.22em',
                 textTransform: 'uppercase',
-                color: '#92a4ac',
+                color: '#414d56',
                 marginBottom: 'clamp(16px, 3vw, 24px)',
               }}
             >

@@ -32,7 +32,7 @@ const tabBtnStyle = (active: boolean): React.CSSProperties => ({
   fontSize: '0.55rem',
   letterSpacing: '0.18em',
   textTransform: 'uppercase',
-  color: active ? '#1e2830' : '#92a4ac',
+  color: active ? '#1e2830' : '#687a86',
   background: 'transparent',
   border: 'none',
   borderBottom: active ? '1px solid #1e2830' : '1px solid transparent',
@@ -104,7 +104,7 @@ export default function PlatformArchitecture() {
             fontFamily: "'Space Grotesk', sans-serif",
             fontSize: '0.78rem',
             letterSpacing: '0.08em',
-            color: '#92a4ac',
+            color: '#414d56',
             textDecoration: 'none',
             display: 'inline-flex',
             alignItems: 'center',
@@ -116,7 +116,7 @@ export default function PlatformArchitecture() {
             (e.currentTarget as HTMLElement).style.color = '#1e2830';
           }}
           onMouseLeave={(e) => {
-            (e.currentTarget as HTMLElement).style.color = '#92a4ac';
+            (e.currentTarget as HTMLElement).style.color = '#414d56';
           }}
         >
           <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden style={{ transform: 'rotate(180deg)' }}>
@@ -131,7 +131,7 @@ export default function PlatformArchitecture() {
             fontSize: '0.58rem',
             letterSpacing: '0.32em',
             textTransform: 'uppercase',
-            color: '#92a4ac',
+            color: '#414d56',
             marginBottom: '16px',
           }}
         >
@@ -151,7 +151,7 @@ export default function PlatformArchitecture() {
           }}
         >
           One unified operating system{' '}
-          <span style={{ color: '#92a4ac' }}>for the full asset lifecycle.</span>
+          <span style={{ color: '#586879' }}>for the full asset lifecycle.</span>
         </h1>
 
         <div style={{ marginBottom: 'clamp(32px, 5vw, 48px)' }}>
@@ -210,7 +210,7 @@ export default function PlatformArchitecture() {
                       fontFamily: "'Space Grotesk', sans-serif",
                       fontSize: '0.8rem',
                       lineHeight: 1.6,
-                      color: '#586879',
+                      color: '#414d56',
                       fontWeight: 300,
                       margin: 0,
                     }}
@@ -247,7 +247,7 @@ export default function PlatformArchitecture() {
                         fontSize: '0.48rem',
                         letterSpacing: '0.12em',
                         textTransform: 'uppercase',
-                        color: '#586879',
+                        color: '#414d56',
                         marginBottom: '4px',
                       }}
                     >
@@ -257,7 +257,7 @@ export default function PlatformArchitecture() {
                       style={{
                         fontFamily: "'Space Grotesk', sans-serif",
                         fontSize: '0.72rem',
-                        color: '#92a4ac',
+                        color: '#414d56',
                         fontWeight: 300,
                         lineHeight: 1.45,
                         margin: 0,
@@ -272,7 +272,7 @@ export default function PlatformArchitecture() {
                 style={{
                   fontFamily: "'Space Grotesk', sans-serif",
                   fontSize: '0.78rem',
-                  color: '#92a4ac',
+                  color: '#414d56',
                   fontWeight: 300,
                   lineHeight: 1.6,
                   margin: 0,
@@ -317,7 +317,7 @@ export default function PlatformArchitecture() {
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: '0.78rem',
               letterSpacing: '0.1em',
-              color: '#92a4ac',
+              color: '#414d56',
               textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',
@@ -328,7 +328,7 @@ export default function PlatformArchitecture() {
               (e.currentTarget as HTMLElement).style.color = '#1e2830';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.color = '#92a4ac';
+              (e.currentTarget as HTMLElement).style.color = '#414d56';
             }}
           >
             View lifecycle modules

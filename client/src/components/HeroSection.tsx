@@ -5,6 +5,7 @@
 
 import { useEffect, useRef } from 'react';
 import { cssHeroBottomFade } from '@shared/hero-about-handoff';
+import { TEXT_ON_DARK } from '@shared/site-text';
 
 export default function HeroSection() {
   const textRef = useRef<HTMLDivElement>(null);
@@ -80,7 +81,7 @@ export default function HeroSection() {
               fontSize: '0.6rem',
               letterSpacing: '0.35em',
               textTransform: 'uppercase',
-              color: 'rgba(198,209,219,0.8)',
+              color: TEXT_ON_DARK.secondary,
               marginBottom: '1.2rem',
               textAlign: 'center',
             }}
@@ -139,7 +140,7 @@ export default function HeroSection() {
                 fontSize: '0.75rem',
                 letterSpacing: '0.2em',
                 textTransform: 'uppercase',
-                color: 'rgba(198,209,219,0.7)',
+                color: TEXT_ON_DARK.muted,
                 textDecoration: 'none',
                 display: 'flex',
                 alignItems: 'center',
@@ -147,7 +148,7 @@ export default function HeroSection() {
                 transition: 'color 0.25s ease',
               }}
               onMouseEnter={e => ((e.currentTarget as HTMLElement).style.color = '#f9fbfd')}
-              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = 'rgba(198,209,219,0.7)')}
+              onMouseLeave={e => ((e.currentTarget as HTMLElement).style.color = TEXT_ON_DARK.muted)}
             >
               Get in touch
               <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
@@ -181,7 +182,7 @@ export default function HeroSection() {
               fontFamily: "'Space Mono', monospace",
               fontSize: '0.55rem',
               letterSpacing: '0.1em',
-              color: i === 0 ? 'rgba(249,251,253,0.85)' : 'rgba(198,209,219,0.3)',
+              color: i === 0 ? TEXT_ON_DARK.primary : 'rgba(249,251,253,0.42)',
               lineHeight: 1.7,
             }}
           >

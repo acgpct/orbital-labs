@@ -159,7 +159,7 @@ export default function ContactEstimate() {
             fontFamily: "'Space Mono', monospace",
             fontSize: '0.6rem',
             letterSpacing: '0.25em',
-            color: '#586879',
+            color: '#414d56',
             textTransform: 'uppercase',
             opacity: visible ? 1 : 0,
             transition: 'opacity 1s ease 0.2s',
@@ -381,7 +381,7 @@ export default function ContactEstimate() {
                               </div>
                               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                                 <div>
-                                  <div style={{ color: '#586879', marginBottom: 2 }}>Reclaimed (after)</div>
+                                  <div style={{ color: '#414d56', marginBottom: 2 }}>Reclaimed (after)</div>
                                   <div style={{ fontFamily: "'Exo 2', sans-serif", fontWeight: 300, fontSize: 17 }}>{formatSaving(saving)}</div>
                                 </div>
                                 <div style={{ height: 1, background: 'rgba(88,104,121,0.12)' }} />
@@ -405,7 +405,7 @@ export default function ContactEstimate() {
                           paddingTop: 12,
                           fontFamily: "'Space Grotesk', sans-serif",
                           fontSize: 11,
-                          color: '#586879',
+                          color: '#414d56',
                         }}
                         formatter={(value) =>
                           value === 'reclaimed' ? 'Reclaimed (annual)' : 'Remaining manual burden'
@@ -533,10 +533,13 @@ export default function ContactEstimate() {
       </div>
 
       <style>{`
+        #contact-estimate input[type="range"] {
+          min-height: 44px;
+        }
         #contact-estimate input[type="range"]::-webkit-slider-thumb {
           -webkit-appearance: none;
-          width: 14px;
-          height: 14px;
+          width: 22px;
+          height: 22px;
           border-radius: 50%;
           background: linear-gradient(180deg, #6b7f90 0%, #586879 100%);
           border: 2px solid rgba(255,255,255,0.85);
@@ -548,8 +551,8 @@ export default function ContactEstimate() {
           transform: scale(1.25);
         }
         #contact-estimate input[type="range"]::-moz-range-thumb {
-          width: 14px;
-          height: 14px;
+          width: 22px;
+          height: 22px;
           border-radius: 50%;
           background: #586879;
           border: 2px solid rgba(255,255,255,0.85);

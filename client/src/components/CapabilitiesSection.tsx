@@ -160,7 +160,7 @@ function CapabilityCard({ cap, index }: { cap: typeof capabilities[0]; index: nu
         <div className="flex items-start justify-between">
           <span
             className="font-mono-space text-xs tracking-widest"
-            style={{ color: '#c6d1db' }}
+            style={{ color: '#687a86' }}
           >
             {cap.id}
           </span>
@@ -180,7 +180,7 @@ function CapabilityCard({ cap, index }: { cap: typeof capabilities[0]; index: nu
         {/* Description */}
         <p
           className="font-inter text-sm leading-relaxed flex-1"
-          style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#586879', fontWeight: 400, lineHeight: 1.7 }}
+          style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#414d56', fontWeight: 400, lineHeight: 1.7 }}
         >
           {cap.description}
         </p>
@@ -193,7 +193,7 @@ function CapabilityCard({ cap, index }: { cap: typeof capabilities[0]; index: nu
               className="font-mono-space text-xs px-2 py-1"
               style={{
                 background: 'rgba(134,143,116,0.08)',
-                color: '#92a4ac',
+                color: '#414d56',
                 border: '1px solid rgba(134,143,116,0.2)',
               }}
             >
@@ -253,11 +253,11 @@ export default function CapabilitiesSection() {
             }}
           >
             Six domains.<br />
-            <span style={{ color: '#92a4ac' }}>One coherent system.</span>
+            <span style={{ color: '#586879' }}>One coherent system.</span>
           </h2>
           <p
             className="reveal-up font-inter text-base leading-loose self-end"
-            style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#586879', fontWeight: 400, lineHeight: 1.8 }}
+            style={{ fontFamily: "'Space Grotesk', sans-serif", color: '#414d56', fontWeight: 400, lineHeight: 1.8 }}
           >
             Each capability is engineered to function independently or as part of
             an integrated intelligence stack — composable, auditable, and built to
