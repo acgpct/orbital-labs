@@ -9,24 +9,18 @@ import { TEXT_ON_DARK } from '@shared/site-text';
 
 export default function HeroSection() {
   const textRef = useRef<HTMLDivElement>(null);
-  const sideRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const items = [
-      { el: textRef.current, delay: 500, from: 'translateY(24px)', to: 'translateY(0)' },
-      { el: sideRef.current, delay: 800, from: 'translateX(-10px)', to: 'translateX(0)' },
-    ];
-    items.forEach(({ el, delay, from, to }) => {
+    const el = textRef.current;
+    if (!el) return;
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    setTimeout(() => {
       if (!el) return;
-      el.style.opacity = '0';
-      el.style.transform = from;
-      setTimeout(() => {
-        if (!el) return;
-        el.style.transition = 'opacity 1.4s cubic-bezier(0.23,1,0.32,1), transform 1.4s cubic-bezier(0.23,1,0.32,1)';
-        el.style.opacity = '1';
-        el.style.transform = to;
-      }, delay);
-    });
+      el.style.transition = 'opacity 1.4s cubic-bezier(0.23,1,0.32,1), transform 1.4s cubic-bezier(0.23,1,0.32,1)';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, 500);
   }, []);
 
   return (
@@ -172,23 +166,6 @@ export default function HeroSection() {
             }}
           />
         </div>
-      </div>
-
-      <div ref={sideRef} className="absolute left-5 bottom-16 flex flex-col gap-1" style={{ zIndex: 10 }}>
-        {['_01', '_02', '_03', '_04', '_05'].map((n, i) => (
-          <span
-            key={n}
-            style={{
-              fontFamily: "'Space Mono', monospace",
-              fontSize: '0.55rem',
-              letterSpacing: '0.1em',
-              color: i === 0 ? TEXT_ON_DARK.primary : 'rgba(249,251,253,0.42)',
-              lineHeight: 1.7,
-            }}
-          >
-            {n}
-          </span>
-        ))}
       </div>
 
       <style>{`
