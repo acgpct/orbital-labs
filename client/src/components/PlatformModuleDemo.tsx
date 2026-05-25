@@ -6,10 +6,9 @@
 import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import {
-  coreModules,
-  moduleDemoVideo,
+  resolveDemoModule,
+  resolveDemoVideo,
   type CoreModuleId,
-  moduleHasDemo,
 } from '@shared/platform-architecture';
 
 const labelStyle: CSSProperties = {
@@ -29,25 +28,23 @@ export default function PlatformModuleDemo({ moduleId, variant = 'featured' }: P
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const isSidebar = variant === 'sidebar';
-  const module = moduleHasDemo(moduleId) ? coreModules.find((m) => m.id === moduleId) : undefined;
-  const videoSrc = moduleId && moduleHasDemo(moduleId) ? moduleDemoVideo(moduleId) : undefined;
+  const displayModule = resolveDemoModule(moduleId);
+  const videoSrc = resolveDemoVideo(moduleId);
+  const videoKey = moduleId === 'asset-management' ? 'asset-management' : 'pipeline-spv';
 
   useEffect(() => {
-    if (isSidebar || !module || !sectionRef.current) return;
+    if (isSidebar || moduleId !== 'asset-management' || !sectionRef.current) return;
     sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }, [moduleId, module, isSidebar]);
+  }, [moduleId, isSidebar]);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video || !videoSrc) return;
+    if (!video) return;
     void video.play().catch(() => {});
-  }, [moduleId, module, isSidebar, videoSrc]);
+  }, [videoKey, isSidebar, videoSrc]);
 
-  if (!isSidebar && !module) return null;
-
-  const title = module?.title ?? 'Platform walkthrough';
-  const summary = module?.summary
-    ?? 'Hover or select a module to preview the walkthrough.';
+  const title = displayModule.title;
+  const summary = displayModule.summary;
 
   const shellStyle: CSSProperties = isSidebar
     ? {
@@ -78,7 +75,7 @@ export default function PlatformModuleDemo({ moduleId, variant = 'featured' }: P
   return (
     <section
       ref={sectionRef}
-      aria-label={module ? `${module.title} product demo` : 'Product demo preview'}
+      aria-label={`${title} product demo`}
       className={`glass-panel scroll-mt-28 ${isSidebar ? 'lg:sticky lg:top-28' : ''}`}
       style={shellStyle}
     >
@@ -114,37 +111,20 @@ export default function PlatformModuleDemo({ moduleId, variant = 'featured' }: P
         className="glass-panel-inset overflow-hidden"
         style={{ borderRadius: '4px', padding: isSidebar ? '6px' : 'clamp(8px, 1.2vw, 10px)' }}
       >
-        {videoSrc ? (
-          <video
-            ref={videoRef}
-            key={moduleId ?? 'idle'}
-            className="block w-full rounded-[2px]"
-            style={videoStyle}
-            src={videoSrc}
-            controls
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            aria-label={`${title} demo recording`}
-          />
-        ) : (
-          <div
-            className="flex items-center justify-center rounded-[2px]"
-            style={{
-              ...videoStyle,
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: isSidebar ? '0.72rem' : '0.78rem',
-              color: '#687a86',
-              fontWeight: 300,
-              textAlign: 'center',
-              padding: 'clamp(16px, 3vw, 24px)',
-            }}
-          >
-            Select Pipeline &amp; SPV, Development, or Asset Management &amp; O&amp;M to preview a demo.
-          </div>
-        )}
+        <video
+          ref={videoRef}
+          key={videoKey}
+          className="block w-full rounded-[2px]"
+          style={videoStyle}
+          src={videoSrc}
+          controls
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-label={`${title} demo recording`}
+        />
       </div>
     </section>
   );

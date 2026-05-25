@@ -67,6 +67,18 @@ export function moduleDemoVideo(id: DemoModuleId): string {
   return moduleDemoVideos[id];
 }
 
+/** Default preview on load; switches to asset-management video when that module is selected. */
+export function resolveDemoVideo(moduleId: CoreModuleId | null | undefined): string {
+  return moduleId === 'asset-management'
+    ? moduleDemoVideos['asset-management']
+    : moduleDemoVideos['pipeline-spv'];
+}
+
+export function resolveDemoModule(moduleId: CoreModuleId | null | undefined) {
+  const id: DemoModuleId = moduleId === 'asset-management' ? 'asset-management' : 'pipeline-spv';
+  return coreModules.find((m) => m.id === id)!;
+}
+
 export function moduleHasDemo(id: CoreModuleId | null | undefined): id is DemoModuleId {
   return id != null && (demoModuleIds as readonly string[]).includes(id);
 }
